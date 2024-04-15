@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "salon": {
+      "type": "salon",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "salon"
+  ]
+}
