@@ -4,8 +4,8 @@
     "theme_name": "Dawn",
     "theme_version": "12.0.0",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -1463,6 +1463,34 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "background-1"
+      }
+    ]
+  },
+  {
+    "name": "Salon Global Settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Global Hero Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "salon_featured_image",
+        "label": "Salon Image 70x720"
+      },
+      {
+        "type": "header",
+        "content": "Global Treatment Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "store_event_offer_image_full",
+        "label": "Global Store Event Offer Image Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "store_event_offer_image_mobile",
+        "label": "Global Store Event Offer Image Mobile"
       }
     ]
   }
