@@ -27,7 +27,8 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-
+    
+    <script src="{{ 'jquery-3.7.0.min.js' | asset_url }}"></script>
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
