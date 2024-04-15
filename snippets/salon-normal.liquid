@@ -1,0 +1,149 @@
+<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="{{ 'enterprise-booking.css' | asset_url }}">
+<!-- no-JS fallback -->
+<noscript>
+    <link rel="stylesheet" href="{{ 'enterprise-booking.css' | asset_url }}">
+</noscript>
+<div id="salon-normal-wrapper" class="enterprise">
+  <div class="pageEntry" id="salonServices">
+    <div class="page-width">
+      {%- if page.metafields.accentuate.section_title != blank -%}
+      <h3 id="salonServiceHeader">{{ page.metafields.accentuate.section_title }}</h3>
+      {%- else -%}
+      <h3 id="salonServiceHeader">Services</h3>
+      {%- endif -%}
+      {%- if page.metafields.accentuate.salon_service_message != blank -%}
+      <div id="salonServiceMessage" style="max-width:750px; margin:0 auto; margin-top:-30px;">
+        <div class="text-center">{{
+          page.metafields.accentuate.salon_service_message }}</div>
+      </div>
+      {%- endif -%}
+      <div class="accordionBox accordion">
+        {% assign index = 0 %}
+        {%- for header in page.metafields.accordion_header.accordion_header -%}
+        {%- if page.metafields.accordion_header.accordion_header[index] -%}
+        {%- if page.metafields.accentuate.accordion_item_checkbox[index] == blank -%}
+        <div class="item">
+          <h2><a class="data-toggle-header" href="#acc-pdesc-{{ index }}">{{ header }}</a></h2>
+          <div id="acc-pdesc-{{ index }}" class="data-toggle-content rte accCont">{{
+            page.metafields.accordion_content.accordion_content[index] }}
+          </div>
+        </div>
+        {%- endif -%}
+        {%- endif -%}
+        {%- assign index = index | plus: 1 -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+  {%- if page.metafields.accentuate.enable_salon_booking == blank -%}
+  {%- if page.metafields.accentuate.salon_waiting_list != blank -%}
+    <script>
+    jQuery(window).on('load',function(){
+      var salonNameTitle = '{{ page.handle }}';
+      if( salonNameTitle == 'perth' ){
+        salonNameTitle = '/' + salonNameTitle;
+      }
+      salonNameTitle = encodeURIComponent(salonNameTitle);
+      jQuery(".accordion .item div.data-toggle-content .book-item h3").each(function(){
+        var serviceMainTitle = $(this).parents('.item').children('h2').text();
+        var serviceNameTitle = $(this).text();
+        var serviceParams = '&service_interested=' + serviceMainTitle + ' [' + serviceNameTitle + ']',
+            serviceNameFinal = encodeURIComponent(serviceMainTitle + ' [' + serviceNameTitle + ']');
+        $(this).addClass('salon-service-title').append("<a data-service='"+ serviceNameFinal +"' href='#' target='_blank' class='typeform-share button-waiting-list' data-mode='popup'>Join waiting list</a>");
+        $(this).find("a.typeform-share").attr('href', 'https://ellabache.typeform.com/to/fLtfCH?salon_name=' + salonNameTitle + serviceParams );
+      });
+      $(".button-waiting-list").on('click', function(e){
+        e.preventDefault();
+        var serviceNameFinal = $(this).attr('data-service');
+        var serviceParams = '&service_interested=' + serviceNameFinal;
+        window.typeformEmbed.makePopup('https://ellabache.typeform.com/to/fLtfCH?salon_name=' + salonNameTitle + serviceParams + gclidNew + utm_sourceNew + utm_mediumNew + utm_campaignNew + utm_termNew, {
+          mode: 'popup',
+          autoOpen: true
+        });
+      });
+    });
+  </script>
+  {%- endif -%}
+  {%- endif -%}
+  <script>
+  jQuery(window).on('load',function(){
+    $('div.accordion .item h2 a.data-toggle-header').on('click', function(){
+      if($(this).parents('h2').hasClass('is-open')){
+        $(this).parents('h2').removeClass('is-open').next('div.data-toggle-content').hide();
+      }else{
+        $(this).parents('h2').addClass('is-open').next('div.data-toggle-content').show();
+      }
+      return false;
+    });
+    // check typeform widget -------------------------------------------------------------
+    var typeFormWidget = check('div.typeform-widget');
+      if(typeFormWidget > 0){
+    var typeFormDataUrl =  jQuery("div.typeform-widget").attr('data-url'),
+        typeFormDataUrlParts = typeFormDataUrl.split("/"),
+        typeFormDataUrlLastPart = typeFormDataUrlParts[typeFormDataUrlParts.length-1];
+      setTimeout(function(){
+        jQuery('div.typeform-widget').each(function(){
+          jQuery(this).find(" iframe[data-qa='iframe']").attr('src', 'https://ellabache.typeform.com/to/' + typeFormDataUrlLastPart + '?typeform-embed=embed-widget' + typeform_sourceNew + utm_sourceNew + utm_mediumNew + utm_campaignNew + utm_termNew + serviceNew + gclidNew);
+        });
+      }, 1000);
+      }
+    });
+    jQuery(document).ready(function(){
+      // Add "Enquire" button at the bottom of the each Accordion Content Item for this template only ---------------------------------------
+      jQuery(".accordion .item").each(function(){
+        var bookButtonCheck = $(this).find("div.book-button").length;
+        {%- if page.metafields.accentuate.book_now_external_url_text != blank -%}
+        var externalURLTxt = '{{ page.metafields.accentuate.book_now_external_url_text }}'; 
+        {%- else -%}
+        var externalURLTxt = 'Booking Enquiry';
+        {%- endif -%}
+        if(bookButtonCheck == 0){
+          {%- if page.metafields.accentuate.book_now_external_url != blank -%}
+            var externalURL = '{{ page.metafields.accentuate.book_now_external_url }}';
+            $(this).find("div.data-toggle-content > h3").append("<br><div class='book-button append-book-button align-right'><a href='#' target='_blank' class='button'>" + externalURLTxt + "</a></div>");
+            $(this).find("div.data-toggle-content .book-button a.button").attr('href', externalURL);
+          {%- else -%}
+            $(this).find("div.data-toggle-content").append("<br><div class='book-button append-book-button' style='margin:0 auto;'><a href='#' class='typeform-share button' data-mode='popup'>Booking Enquiry</a></div>");
+            $(this).find("div.data-toggle-content .book-button a.typeform-share").attr('href', 'https://ellabache.typeform.com/to/BbeXEo?salon='+ serviceNameTitleSlug + utm_sourceNew + utm_mediumNew + utm_campaignNew + utm_termNew + serviceNew + gclidNew);
+          {%- endif -%}
+        } 
+      }); 
+      var primaryBookButton = check('.primary-book-now');
+      if (primaryBookButton > 0){
+        var serviceNameTitle = $("#serviceNameTitle").text().replace(/[^\w ]+/g,''),
+        serviceNameTitleTrim = serviceNameTitle.replace('Ella Bach', '').trim().toLowerCase(),
+        serviceNameTitleSlug = serviceNameTitleTrim.replace(/ /g, '-');
+        // Primary Book Button -------------------------
+          jQuery(".primary-book-now").attr('href', 'https://ellabache.typeform.com/to/BbeXEo?salon='+ serviceNameTitleSlug +  utm_sourceNew + utm_mediumNew + utm_campaignNew + serviceNew + gclidNew);
+            jQuery("button[data-sw-action='book']").each(function(){
+            $(this).text('Booking Enquiry');
+            $(this).addClass('typeform-share button').attr('href', 'https://ellabache.typeform.com/to/BbeXEo?salon='+ serviceNameTitleSlug + utm_sourceNew + utm_mediumNew + utm_campaignNew + serviceNew + gclidNew);
+        });
+      }
+    var generalBookingButton = check('div.bookings .book-button a, #salonServices .item');
+        {%- if page.metafields.accentuate.book_now_external_url_text != blank -%}
+        var externalURLTxt = '{{ page.metafields.accentuate.book_now_external_url_text }}'; 
+        {%- else -%}
+        var externalURLTxt = 'Booking Enquiry';
+        {%- endif -%}
+      if(generalBookingButton > 0){
+        {%- if page.metafields.accentuate.book_now_external_url != blank -%}
+        var externalURL = '{{ page.metafields.accentuate.book_now_external_url }}';
+        jQuery('div.bookings .book-item, #salonServices .item').each(function(){
+            $(this).find(".book-button a").text(externalURLTxt);
+            $(this).find(".book-button a").addClass('button').attr('href', externalURL).attr('target', '_blank');
+         });
+        {%- else -%}
+          // Removes 'Ella Bache' prefix, trim, lowercase and concat string with hyphen ----------------------
+          var serviceNameTitle = $("#serviceNameTitle").text().replace(/[^\w ]+/g,''),
+              serviceNameTitleTrim = serviceNameTitle.replace('Ella Bach', '').trim().toLowerCase(),
+              serviceNameTitleSlug = serviceNameTitleTrim.replace(/ /g, '-');
+            jQuery('div.bookings .book-item, #salonServices .item').each(function(){
+              $(this).find(".book-button a").text(externalURLTxt);
+              $(this).find(".book-button a").addClass('typeform-share button').attr('data-mode', 'popup').attr('href', 'https://ellabache.typeform.com/to/BbeXEo?salon='+ serviceNameTitleSlug +  utm_sourceNew + utm_mediumNew + utm_campaignNew + serviceNew + gclidNew);
+            });
+        {%- endif -%}   
+      }
+    }); 
+</script>
+</div>
