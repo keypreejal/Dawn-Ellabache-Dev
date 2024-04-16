@@ -21,10 +21,20 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "custom_liquid_yiBYF3": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div id='storemapper' style='width:100%;'>\n  <p>Store Locator is loading from <a href='https:\/\/www.storemapper.co'>Storemapper store locator<\/a>...<\/p>\n<\/div>\n<script data-storemapper-start='2018,09,20'\n        data-storemapper-id='5176'>\n        (function() {var script = document.createElement('script');\n          script.type  = 'text\/javascript';script.async = true;\n          script.src = 'https:\/\/www.storemapper.co\/js\/widget.js';\n          var entry = document.getElementsByTagName('script')[0];\n          entry.parentNode.insertBefore(script, entry);}\n        ());\n<\/script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "video_Ybbzjm"
+    "video_Ybbzjm",
+    "custom_liquid_yiBYF3"
   ]
 }
