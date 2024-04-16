@@ -6,9 +6,25 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "video_Ybbzjm": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "enable_video_looping": false,
+        "video": "shopify:\/\/files\/videos\/Moisture-Protective-Application-Final.mp4",
+        "video_url": "",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "video_Ybbzjm"
   ]
 }

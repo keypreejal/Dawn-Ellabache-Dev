@@ -119,8 +119,17 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "background-1",
+    "salon_featured_image": "shopify:\/\/shop_images\/Therapist_720x_720x_4479ef79-5518-436e-9edb-6353756de330.jpg",
     "checkout_logo_image": "shopify:\/\/shop_images\/ellabache_572021e5-1f8d-45bd-890c-0afed81bee15.svg",
     "checkout_button_color": "#001b39",
+    "enable_minicart_upsell": true,
+    "upsell_item_limit": 3,
+    "shortcuts_consumer_key": "r7nfAlq0ILg4jhZMlRxv",
+    "shortcuts_consumer_secret": "YSgXTSpZl1bN1K9X5hnL",
+    "shortcuts_access_token_key": "qVSkMJsw67WKPFZeC06V",
+    "shortcuts_access_token_secret": "T73IfVgFBBMum2EcpQHJ",
+    "shortcuts_widget_base_uri": "d19ujuohqco9tx.cloudfront.net\/webwidgets\/7-49-1-9",
+    "shortcuts_api_version": "7.49.1.9",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -216,16 +225,7 @@
           "shadow": "#121212"
         }
       }
-    },
-    "enable_minicart_upsell": true,
-    "upsell_item_limit": 3,
-    "shortcuts_consumer_key": "r7nfAlq0ILg4jhZMlRxv",
-    "shortcuts_consumer_secret": "YSgXTSpZl1bN1K9X5hnL",
-    "shortcuts_access_token_key": "qVSkMJsw67WKPFZeC06V",
-    "shortcuts_access_token_secret": "T73IfVgFBBMum2EcpQHJ",
-    "shortcuts_widget_base_uri": "d19ujuohqco9tx.cloudfront.net\/webwidgets\/7-49-1-9",
-    "shortcuts_api_version": "7.49.1.9",
-    "salon_featured_image": "shopify:\/\/shop_images\/Therapist_720x_720x_4479ef79-5518-436e-9edb-6353756de330.jpg"
+    }
   },
   "presets": {
     "Default": {
