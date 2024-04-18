@@ -36,53 +36,24 @@
       "blocks": {
         "collapsible_row_DGYUqD": {
           "type": "collapsible_row",
+          "repeater": "{{ page.metafields.custom.salon_faq.value }}",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_JgB7cL": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_GNkbiE": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_QqzRRc": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "{{ block.repeater.question.value }}",
+            "icon": "none",
+            "row_content": "<p>{{ block.repeater.faq_answer.value }}<\/p>",
             "page": ""
           }
         }
       },
       "block_order": [
-        "collapsible_row_DGYUqD",
-        "collapsible_row_JgB7cL",
-        "collapsible_row_GNkbiE",
-        "collapsible_row_QqzRRc"
+        "collapsible_row_DGYUqD"
       ],
       "settings": {
         "caption": "",
         "heading": "Collapsible content",
         "heading_size": "h1",
         "heading_alignment": "center",
-        "layout": "none",
+        "layout": "section",
         "color_scheme": "",
         "container_color_scheme": "",
         "open_first_collapsible_row": false,
