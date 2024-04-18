@@ -7,26 +7,26 @@
         "padding_bottom": 28
       }
     },
-    "collapsible_content_BJMH4Q": {
+    "collapsible_content_VaTakF": {
       "type": "collapsible-content",
       "blocks": {
-        "collapsible_row_wXfUaK": {
+        "collapsible_row_irD4z6": {
           "type": "collapsible_row",
           "repeater": "{{ page.metafields.custom.salon_faq.value }}",
           "settings": {
             "heading": "{{ block.repeater.question.value }}",
-            "icon": "none",
+            "icon": "check_mark",
             "row_content": "<p>{{ block.repeater.faq_answer.value }}<\/p>",
             "page": ""
           }
         }
       },
       "block_order": [
-        "collapsible_row_wXfUaK"
+        "collapsible_row_irD4z6"
       ],
       "settings": {
         "caption": "",
-        "heading": "Salon FAQs",
+        "heading": "Collapsible content",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
@@ -42,6 +42,6 @@
   },
   "order": [
     "main",
-    "collapsible_content_BJMH4Q"
+    "collapsible_content_VaTakF"
   ]
 }
