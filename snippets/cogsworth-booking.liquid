@@ -1,0 +1,17 @@
+{{ 'cogsworth-booking-popup.css' | asset_url | stylesheet_tag }}
+<div id="cogsworthBookingPopup" class="white-popup-block mfp-hide">
+  <div class="popup-content-wrap">
+    {% if page.metafields.cogsworth.cogsworth_staff_key %}
+      <div
+        data-cogsworth-endpoint="{{ page.metafields.cogsworth.cogsworth_staff_key }}"
+        data-cogsworth-type="iframe"
+        style="height: 610px;"></div>
+    {% endif %}
+  </div>
+</div>
+<script src="https://embed.cogsworth.com/1.0.1/index.min.js" defer="defer"></script>
+<script>
+  $(window).on('load', function() {
+    $('#btnCogsworthBooking').magnificPopup({type: 'inline', midClick: true, mainClass: 'mfp-fade', fixedContentPos: true});
+  });
+</script>

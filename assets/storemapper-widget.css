@@ -1,0 +1,97 @@
+#storemapper-form + #storemapper-left {
+  display: none;
+}
+#storemapper-left {
+  height: auto !important;
+}
+#storemapper #storemapper-list {
+  display: none;
+}
+#storemapper #storemapper-right {
+  width: 100%;
+}
+.storemapper-powered-by {
+  display: none !important;
+}
+#storemapper #storemapper-form {
+  padding: 0 !important;
+  margin-bottom: 30px;
+  box-shadow: none !important;
+}
+#storemapper.search_on_top #storemapper-form .storemapper-form-inner {
+  display: block !important;
+}
+#storemapper.search_on_top
+  #storemapper-form
+  .storemapper-form-inner
+  #storemapper-zip {
+  display: block;
+  margin: 0;
+  width: 100% !important;
+  border: none;
+  border-bottom: 2px solid #001939;
+  padding: 25px 60px 25px 0;
+  padding-right: 60px !important;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 21px;
+  height: auto;
+}
+#storemapper.search_on_top
+  #storemapper-form
+  .storemapper-form-inner
+  #storemapper-go {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  background-color: transparent;
+  background-image: url("https://cdn.shopify.com/s/files/1/0119/6028/7313/files/icon-search.svg?v=1629344575");
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 0;
+  background-size: 40px 40px;
+}
+@media only screen and (max-width: 768px) {
+  #storemapper.search_on_top
+    #storemapper-form
+    .storemapper-form-inner
+    #storemapper-zip {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+  }
+  #storemapper.search_on_top
+    #storemapper-form
+    .storemapper-form-inner
+    #storemapper-go {
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+  }
+}
+#storemapper .storemapper-reset {
+  right: 42px;
+  left: inherit !important;
+}
+#storemapper #storemapper-right {
+  height: 417px !important;
+}
+#storemapper.search_on_top #storemapper-form {
+  z-index: 1 !important;
+}
+#storemapper.search_on_top
+  #storemapper-form
+  .storemapper-form-inner
+  #storemapper-zip,
+#storemapper #storemapper-zip {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+#storemapper a:focus {
+  outline: none !important;
+}

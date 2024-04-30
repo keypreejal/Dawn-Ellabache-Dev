@@ -1,0 +1,129 @@
+{
+  "sections": {
+    "find-salon": {
+      "type": "find-salon",
+      "blocks": {
+        "14c76de2-c9fa-414b-b68d-85e3f8245ae8": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/quiGongMassage_1.png"
+          }
+        },
+        "2d5d990d-e455-473d-8a24-5ac7a43c691b": {
+          "type": "video",
+          "settings": {
+            "video_path": "https:\/\/cdn.shopify.com\/s\/files\/1\/2999\/1646\/files\/Moisture-Protective-Application-Final.mp4?v=1634720527"
+          }
+        }
+      },
+      "block_order": [
+        "14c76de2-c9fa-414b-b68d-85e3f8245ae8",
+        "2d5d990d-e455-473d-8a24-5ac7a43c691b"
+      ],
+      "settings": {
+      }
+    },
+    "find-salon-treatment-block": {
+      "type": "find-salon-treatment-block",
+      "blocks": {
+        "2e914a00-54e1-47d8-80ce-a2ca04ed4d59": {
+          "type": "full-width-slide2",
+          "disabled": true,
+          "settings": {
+            "banner_switch_sec": true,
+            "desktop_image_sec": "shopify:\/\/shop_images\/0323_GWP_Web_Banners_1900x650px.jpg",
+            "mobile_image_sec": "shopify:\/\/shop_images\/0323_GWP_Mobile_800x800px.jpg",
+            "video_url_sec": "",
+            "title_sec": "",
+            "subtext_sec": "",
+            "subtext_sec_mob": "",
+            "extra_info_sec": "",
+            "button_sec": "",
+            "slider_url_sec": "",
+            "slide_Nav_Text_sec": "",
+            "slider_title_color_sec": "#ffffff",
+            "slider_title_bgcolor_sec": "#001e37",
+            "slider_color_sec": "#001e37",
+            "slider_btn_border_color2": "#001e37",
+            "slider_btn_bg_color2": "#001e37",
+            "slider_btn_color2_sec": "#ffffff",
+            "btn_border_color_hover2": "#001e37",
+            "btn_bg_color_hover2": "#001e37",
+            "slider_color2_sec": "#ffffff"
+          }
+        },
+        "558dd793-3e08-4578-ae38-38a08ecf4288": {
+          "type": "full-width-slide2",
+          "settings": {
+            "banner_switch_sec": true,
+            "desktop_image_sec": "shopify:\/\/shop_images\/0723_TREATMENT_BOOSTER_Web_Banners_1900x650px.jpg",
+            "video_url_sec": "",
+            "title_sec": "",
+            "subtext_sec": "",
+            "subtext_sec_mob": "",
+            "extra_info_sec": "",
+            "button_sec": "",
+            "slider_url_sec": "",
+            "slide_Nav_Text_sec": "",
+            "slider_title_color_sec": "#ffffff",
+            "slider_title_bgcolor_sec": "#001e37",
+            "slider_color_sec": "#001e37",
+            "slider_btn_border_color2": "#001e37",
+            "slider_btn_bg_color2": "#001e37",
+            "slider_btn_color2_sec": "#ffffff",
+            "btn_border_color_hover2": "#001e37",
+            "btn_bg_color_hover2": "#001e37",
+            "slider_color2_sec": "#ffffff"
+          }
+        },
+        "6d5f32d9-0ca3-4fb6-b898-4e6113f5c6c6": {
+          "type": "full-width-slide2",
+          "disabled": true,
+          "settings": {
+            "banner_switch_sec": true,
+            "desktop_image_sec": "shopify:\/\/shop_images\/0523_Treatment_NETWORK_Web_Banners.jpg",
+            "mobile_image_sec": "shopify:\/\/shop_images\/Treatment_HIGHPERF_Web_Banners_mobile.jpg",
+            "video_url_sec": "",
+            "title_sec": "",
+            "subtext_sec": "",
+            "subtext_sec_mob": "",
+            "extra_info_sec": "",
+            "button_sec": "",
+            "slider_url_sec": "",
+            "slide_Nav_Text_sec": "",
+            "slider_title_color_sec": "#ffffff",
+            "slider_title_bgcolor_sec": "#001e37",
+            "slider_color_sec": "#001e37",
+            "slider_btn_border_color2": "#001e37",
+            "slider_btn_bg_color2": "#001e37",
+            "slider_btn_color2_sec": "#ffffff",
+            "btn_border_color_hover2": "#001e37",
+            "btn_bg_color_hover2": "#001e37",
+            "slider_color2_sec": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "2e914a00-54e1-47d8-80ce-a2ca04ed4d59",
+        "558dd793-3e08-4578-ae38-38a08ecf4288",
+        "6d5f32d9-0ca3-4fb6-b898-4e6113f5c6c6"
+      ],
+      "settings": {
+        "block_title": "TREATMENT OFFERS",
+        "autoplay": true,
+        "autoplay_int": "2000",
+        "gridColCheckbox": false,
+        "col1_bg_color": "#001e37",
+        "col1_title": "VIRTUAL SKIN CONSULT",
+        "col1_desc": "Select a salon to book a virtual skin consult and speak with our expert beauty therapists.",
+        "col1_button_text": "Book Now",
+        "col1_button_url": "#cogsworthFormPopup",
+        "colum_grid_banner_img": "shopify:\/\/shop_images\/treatment_3496f900-c692-48c9-a10d-5949392ad45b.jpg"
+      }
+    }
+  },
+  "order": [
+    "find-salon",
+    "find-salon-treatment-block"
+  ]
+}

@@ -1,0 +1,13 @@
+{{ 'storemapper-widget.css' | asset_url | stylesheet_tag }}
+<div id='storemapper' style='width:100%;'>
+  <p>Store Locator is loading from <a href='https://www.storemapper.co'>Storemapper store locator</a>...</p>
+</div>
+<script data-storemapper-start='2018,09,20'
+        data-storemapper-id='5176'>
+        (function() {var script = document.createElement('script');
+          script.type  = 'text/javascript';script.async = true;
+          script.src = 'https://www.storemapper.co/js/widget.js';
+          var entry = document.getElementsByTagName('script')[0];
+          entry.parentNode.insertBefore(script, entry);}
+        ());
+</script>

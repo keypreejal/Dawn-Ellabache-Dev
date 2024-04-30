@@ -1,0 +1,75 @@
+{{ 'accordion-block.css' | asset_url | stylesheet_tag }}
+{{ 'find-salon-accordion-block.css' | asset_url | stylesheet_tag }}
+<div class="accordion-block">
+    <div class="flex-container col2">
+        {%- assign menu = linklists['stores'] -%}
+        {%- for link in menu.links -%}
+        {% if link.links == blank %}
+        {% if link.url != '#' %}
+        <div class="item no-underline">
+            <h3><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></h3>
+        </div>
+        {% else %}
+        <div class="item no-underline">
+            <h3>{{ link.title }}</h3>
+        </div>
+        {% endif %}
+        {% else %}
+        <div class="item">
+            <div class="header">
+                <h3>{{ link.title }}</h3>
+            </div>
+            <div class="content">
+                <div class="column-2">
+                    <div class="custom-scroll">
+                        <div class="masonry-grid">
+                            {%- for sub_link in link.links -%}
+                            <div class="grid-item">
+                                <h4>{{ sub_link.title }}</h4>
+                                <ul>
+                                    {%- for sub_sub_link in sub_link.links -%}
+                                    <li><a href="{{ sub_sub_link.url }}" title="{{ sub_sub_link.title | escape }}">{{
+                                            sub_sub_link.title }}</a></li>
+                                    {%- endfor -%}
+                                </ul>
+                            </div>
+                            {%- endfor -%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {%- endfor -%}
+    </div>
+</div>
+<script src="{{ 'masonry-pkgd-min.js' | asset_url }}" defer="defer"></script>
+<script defer="defer">
+$(document).ready(function () {
+    var accordionOffsetTop = $('.accordion-block').offset().top,
+        accordionHeight = $('.accordion-block').height(),
+        accordionScrolltop = accordionOffsetTop - accordionHeight / 2;
+    $('div.accordion-block div.item div.header').on('click', function () {
+        if ($(this).hasClass('is-open')) {
+            $(this).removeClass('is-open').next('div.content').stop().slideUp();
+        } else {
+            $('div.accordion-block div.item div.header').removeClass('is-open').next('div.content').stop().slideUp();
+            $(this).addClass('is-open').next('div.content').stop().slideDown();
+        }
+        var winWidth = $(window).width();
+        if (winWidth > 768) {
+            // Masonry Initialized & Animate ---------------------
+            $(this).next('.content').find('.masonry-grid').masonry({
+                itemSelector: '.grid-item',
+                horizontalOrder: true
+            });
+            $('.masonry-grid').removeClass('visible');
+            var $that = $(this);
+            setTimeout(function () {
+                $that.next('.content').find('.masonry-grid').addClass('visible');
+                $('html').animate({ scrollTop: accordionScrolltop });
+            }, 500);
+        }
+    });
+});
+</script>
