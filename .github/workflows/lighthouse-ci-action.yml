@@ -1,0 +1,18 @@
+# This is a basic workflow to help you get started with Actions
+name: Shopify Lighthouse CI
+on: [push]
+jobs:
+  lhci:
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Lighthouse
+      uses: shopify/lighthouse-ci-action@1.0
+      with:
+        access_token: ${{ secrets.SHOP_ACCESS_TOKEN_DEV }}
+        store: ${{ secrets.SHOP_STORE_DEV }}
+        password: ${{ secrets.SHOP_PASSWORD_DEV }}
+        lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        collection_handle: all
+        product_handle: gift-card
