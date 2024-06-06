@@ -1,0 +1,86 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'custom-component-collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  @media screen and (max-width: 749px) {
+    .collection-hero--with-image .collection-hero__inner {
+      padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+    }
+  }
+{%- endstyle -%}
+
+<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+    <div class="collection-hero__text-wrapper">
+      <div class="page-width">
+        {%- if collection.metafields.accentuate.banner_secondary_title != blank -%}
+            <p class="sec-title" style="{%- if collection.metafields.accentuate.banner_font_color != blank -%} color:{{ collection.metafields.accentuate.banner_font_color }}; {%- endif -%}">{{ collection.metafields.accentuate.banner_secondary_title }}</p>
+        {%- endif -%}
+        {%- if collection.metafields.accentuate.banner_primary_title != blank -%}
+            <h1 class="collection-hero__title ttt" style="{%- if collection.metafields.accentuate.banner_font_color != blank -%} color:{{ collection.metafields.accentuate.banner_font_color }}; {%- endif -%}">{{ collection.metafields.accentuate.banner_primary_title }}</h1>
+        {%- else -%}
+            <h1 class="collection-hero__title" style="{%- if collection.metafields.accentuate.banner_font_color != blank -%} color:{{ collection.metafields.accentuate.banner_font_color }}; {%- endif -%}">
+            <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+            {{- collection.title | escape -}}
+            </h1>
+        {%- endif -%}
+        {%- if collection.metafields.accentuate.primary_title_separator_color != blank -%}
+          <div class="separator" style="background-color:{{ collection.metafields.accentuate.primary_title_separator_color }};"></div>
+       {%- endif -%}
+        {%- if collection.metafields.accentuate.banner_text != blank -%}
+          <div class="collection-hero__description rte test" style="color:{{ collection.metafields.accentuate.banner_font_color }};">{{ collection.metafields.accentuate.banner_text }}</div>
+        {%- else -%}
+          {%- if section.settings.show_collection_description -%}
+          {%- if collection.description != blank  -%}
+            <div class="collection-hero__description rte fffff" style="{%- if collection.metafields.accentuate.banner_font_color != blank -%} color:{{ collection.metafields.accentuate.banner_font_color }}; {%- endif -%}">{{ collection.description }}</div>
+          {%- endif -%}
+        {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.settings.show_collection_image and collection.image -%}
+      <div class="collection-hero__image-container">
+        <img src="{{ collection.image | img_url: '1280x' }}"
+            srcset="{{ collection.image | img_url: '1900x' }} 1900w,
+                    {{ collection.image | img_url: '1400x' }} 1400w,
+                    {{ collection.image | img_url: '990x' }} 990w,
+                    {{ collection.image | img_url: '750x' }} 750w, 
+                    {{ collection.image | img_url: '480x' }} 480w" 
+                alt="{{ collection.image.alt | escape }}"
+                sizes="100vw"
+                />
+      </div>
+    {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    }
+  ]
+}
+{% endschema %}

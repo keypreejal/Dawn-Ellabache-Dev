@@ -1323,6 +1323,12 @@
       },
       {
         "type": "text",
+        "id": "social_linkedin_link",
+        "label": "t:settings_schema.social-media.settings.social_linkedin_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_linkedin_link.info"
+      },
+      {
+        "type": "text",
         "id": "social_youtube_link",
         "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_youtube_link.info"
@@ -1463,34 +1469,6 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "background-1"
-      }
-    ]
-  },
-  {
-    "name": "Salon Global Settings",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Global Hero Banner"
-      },
-      {
-        "type": "image_picker",
-        "id": "salon_featured_image",
-        "label": "Salon Image 70x720"
-      },
-      {
-        "type": "header",
-        "content": "Global Treatment Banner"
-      },
-      {
-        "type": "image_picker",
-        "id": "store_event_offer_image_full",
-        "label": "Global Store Event Offer Image Desktop"
-      },
-      {
-        "type": "image_picker",
-        "id": "store_event_offer_image_mobile",
-        "label": "Global Store Event Offer Image Mobile"
       }
     ]
   }

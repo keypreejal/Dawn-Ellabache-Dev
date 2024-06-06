@@ -1,0 +1,7 @@
+.footer__list-social svg{
+    height: 37px;
+    display: block;
+}
+.list-social__link{
+    padding-bottom:0;
+}

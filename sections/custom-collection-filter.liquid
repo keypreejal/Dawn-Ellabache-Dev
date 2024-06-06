@@ -1,0 +1,436 @@
+{{ 'custom-collection-filter.css' | asset_url | stylesheet_tag }}
+{% comment %} determine which prefix tags are currently active {% endcomment %}
+{%- capture active_prefix_tags -%}
+    {%- for current_tag in current_tags -%}
+        {{- current_tag | split: '-' | first | handleize -}}
+        {%- unless forloop.last -%}
+        -split-
+        {%- endunless -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{%- assign active_prefix_tags = active_prefix_tags | split: '-split-' -%}
+<div id="collection-dynamic-content">
+    <div class="filters">
+        <h2 class="section-header"><label>Filter By</label><span id="clearAll">Clear All <img src="{{ 'icon-cross-white-small.png' | asset_url }}" loading="lazy" alt="cross"></span></h2>
+        <div id="filter-wrapper">
+            {%- for block in section.blocks -%}
+                {%- if block.type == "tags" -%}
+                    {%- assign prefix = block.settings.prefix -%}
+                    {%- assign filter_tag_exist = false -%}
+                    {%- for tag in collection.all_tags -%}
+                        {%- if tag contains prefix -%}
+                            {%- assign filter_tag_exist = true -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                    {%- assign tag_sort_order = "" -%}
+                    {%- if block.settings.tag_sort_enable and block.settings.tag_sort_order.size > 0 -%}
+                        {%- assign tag_sort_order = block.settings.tag_sort_order | split: "," -%}
+                    {%- endif -%}
+                    {%- if filter_tag_exist -%}
+                        <div class="filter-option-block" data-title="{{ block.settings.title }}">
+                            <div class="filter-block-title">
+                                <h3 data-title="{{ block.settings.title }}">
+                                    <label>Filter By</label>
+                                    <span>{{ block.settings.title }}</span>
+                                </h3>
+                            </div>
+                            <div id="content-{{forloop.index}}" class="filter-block-content">
+                                <ul {% if prefix == "Price:" %} data-reorder-list {% endif %}>
+                                    <li class="collection-sidebar__item collectionParent" style="display: none">
+                                        <a href="{{ collection.url }}" title="">{{ collection.title }}</a>
+                                    </li>
+                            {%- if tag_sort_order != blank -%}
+                                    {%- for tag in tag_sort_order -%}
+                                        {%- if tag contains prefix -%}
+                                            {%- if current_tags contains tag -%}
+                                                <li class="collection-sidebar__item collection-sidebar__item--active" {%- if prefix == "Price:" -%} {% include 'filter-money-range-label' %} {%- endif -%}>
+                                                    {{ tag | remove: prefix | link_to_remove_tag: tag | replace: 'title=', 'class="remove-tag-link" title='}}
+                                                </li> 
+                                            {%- endif -%}
+                                        {%- endif -%}
+                                        {%- if tag contains prefix -%}
+                                            {%- unless current_tags contains tag -%}
+                                                <li class="collection-sidebar__item" {%- if prefix == "Price:" -%} {%- include 'filter-money-range-label' -%} {%- endif -%}>
+                                                    {%- assign current_tag_prefix = tag | split: "-" | first | handleize -%}
+                                                    {%- if active_prefix_tags contains current_tag_prefix -%}
+                                                        {% comment %} generate url {% endcomment %}
+                                                        {%- capture tag_url -%}
+                                                            {%- for current_tag in current_tags -%}
+                                                                {%- assign current_tag_handleize = current_tag | split : "-"  | first | handleize -%}
+                                                                {%- unless current_tag_handleize == current_tag_prefix -%}
+                                                                    {{- current_tag | handleize -}}+
+                                                                {%- endunless -%}
+                                                            {%- endfor -%}
+                                                        {%- endcapture -%}
+                                                        {%- capture new_url -%}/collections/{{ collection.handle }}/{{ tag_url }}{{ tag | handleize }}{%- endcapture -%}
+                                                        {{ tag | remove: prefix | replace: '_', '-' | link_to: new_url }}
+                                                    {%- else -%}
+                                                        {{ tag | remove: prefix | replace: '_', '-' |  link_to_add_tag: tag }}
+                                                    {%- endif -%}
+                                                </li>
+                                            {%- endunless -%}
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                            {%- else -%}
+                                {%- for tag in collection.all_tags -%}
+                                    {%- if tag contains prefix -%}
+                                        {%- if current_tags contains tag -%}
+                                            <li id="filter-{{forloop.index}}" class="collection-sidebar__item collection-sidebar__item--active" {%- if prefix == "Price:" -%} {%- include 'filter-money-range-label' -%} {%- endif -%}>
+                                                {{ tag | remove: prefix | replace: '_', '-' | link_to_remove_tag: tag | replace: 'title=', 'class="remove-tag-link" title='}}
+                                            </li> 
+                                        {%- endif -%}
+                                    {%- endif -%}
+                                    {%- if tag contains prefix -%}
+                                        {%- unless current_tags contains tag -%}
+                                            <li class="collection-sidebar__item" {%- if prefix == "Price:" -%} {% include 'filter-money-range-label' %} {%- endif -%}>
+                                                {%- assign current_tag_prefix = tag | split: "-" | first | handleize -%}
+                                                {%- if active_prefix_tags contains current_tag_prefix -%}
+                                                    {% comment %} generate url {% endcomment %}
+                                                    {%- capture tag_url -%}
+                                                        {%- for current_tag in current_tags -%}
+                                                            {%- assign current_tag_handleize = current_tag | split : "-"  | first | handleize -%}
+                                                            {%- unless current_tag_handleize == current_tag_prefix -%}
+                                                                {{- current_tag | handleize -}}+
+                                                            {%- endunless -%}
+                                                        {%- endfor -%}
+                                                    {%- endcapture -%}
+                                                    {%- capture new_url -%}/collections/{{ collection.handle }}/{{ tag_url }}{{ tag | handleize }}{%- endcapture -%}
+                                                    {{ tag | remove: prefix | replace: '_', '-' | link_to: new_url }}
+                                                {%- else -%}
+                                                    {{ tag | remove: prefix | replace: '_', '-' | link_to_add_tag: tag }}
+                                                {%- endif -%}
+                                            </li>
+                                        {%- endunless -%}
+                                    {%- endif -%}
+                                {%- endfor -%}
+                            {%- endif -%}
+                                </ul>
+                            </div>
+                        </div>
+                    {%- endif -%}
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
+        <div class="breadcrumbs_filterTag">
+            {% include 'custom-breadcrumbs' %}
+            <div class="selectedFilterBox" data-url={{collection.url}} style="display: none">
+                {% comment %}<label>{{ 'collections.general.filter_by'  | t}}:</label>{% endcomment %}
+                <div class="selectedFilter">
+                </div>   
+            </div>
+        </div>     
+    </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  /*var filterWrapper = document.getElementById("filter-wrapper");
+  var titles = filterWrapper.querySelectorAll(".filter-block-title");
+
+  titles.forEach(function (title) {
+    title.addEventListener("click", function (e) {
+      if (e.target.tagName !== 'A') {
+        var isOpen = this.classList.contains('is-open');
+        
+        // Close all titles and contents
+        titles.forEach(function (t) {
+          t.classList.remove('is-open');
+        });
+
+        var contents = filterWrapper.querySelectorAll(".filter-block-content");
+        contents.forEach(function (content) {
+          content.classList.remove('open');
+          content.style.height = '0';
+          //content.style.opacity = '0';
+        });
+
+        // Open the clicked title and content if it was not already open
+        if (!isOpen) {
+          this.classList.add('is-open');
+          var nextContent = this.nextElementSibling;
+          if (nextContent && nextContent.classList.contains('filter-block-content')) {
+            nextContent.classList.add('open');
+            setTimeout(function(){
+              nextContent.style.height = nextContent.scrollHeight + 'px';
+              nextContent.style.opacity = '1';
+            }, 100)
+          }
+        }
+      }
+    });
+  });
+  */
+
+  filterClickEvents();
+  getSelected();
+  var af = new AjaxifyFilter('#MainContent', '.filters', function () {
+      getSelected();
+      filterClickEvents();
+      var event = new CustomEvent('ajaxifyfiltered');
+      document.dispatchEvent(event);
+  });
+});
+
+
+    // PARAMS 
+    // selector - main container for the grid
+    // filterSelector - collection-sidebar
+    // containers - additional selectors that you want to copy over
+    // callback - callback function to be invoked when ajax call is done
+    AjaxifyFilter = function (selector, filterSelector, callback) {
+        var af = this;
+        af.selector = selector;
+        af.filterSelector = filterSelector;
+        af.queryParams = {};
+
+        af.addEventHandlers = function () {
+            var filter_selector = document.querySelector(this.filterSelector);
+            var filter_links = filter_selector.querySelectorAll("a[href^='/collections/']");
+
+            filter_links.forEach(function(filter) {
+                filter.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var url = filter.getAttribute('href');
+                    af.ajaxFilter(url);
+                });
+            });
+
+            var filterWrapper = document.getElementById("filter-wrapper");
+            var titles = filterWrapper.querySelectorAll(".filter-block-title");
+          
+            titles.forEach(function (title) {
+              title.addEventListener("click", function (e) {
+                if (e.target.tagName !== 'A') {
+                  var isOpen = this.classList.contains('is-open');
+                  
+                  // Close all titles and contents
+                  titles.forEach(function (t) {
+                    t.classList.remove('is-open');
+                  });
+          
+                  var contents = filterWrapper.querySelectorAll(".filter-block-content");
+                  contents.forEach(function (content) {
+                    content.classList.remove('open');
+                    content.style.height = '0';
+                    //content.style.opacity = '0';
+                  });
+          
+                  // Open the clicked title and content if it was not already open
+                  if (!isOpen) {
+                    this.classList.add('is-open');
+                    var nextContent = this.nextElementSibling;
+                    if (nextContent && nextContent.classList.contains('filter-block-content')) {
+                      nextContent.classList.add('open');
+                      setTimeout(function(){
+                        nextContent.style.height = nextContent.scrollHeight + 'px';
+                        nextContent.style.opacity = '1';
+                      }, 100)
+                    }
+                  }
+                }
+              });
+            });
+
+            filterClickEvents();
+        }
+
+        af.updateQueryParams = function () {
+            if (location.search.length) {
+                for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+                    aKeyValue = aCouples[i].split('=');
+                    if (aKeyValue.length > 1) {
+                        af.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+                    }
+                }
+            }
+        }
+
+        af.ajaxFilter = function (url) {
+            // just a loading indicator
+            document.body.style.cursor = "wait";
+
+            // update window history state
+            var stateUrl = url.split('/collections/')[1];
+            window.history.pushState(stateUrl, null, "/collections/" + stateUrl);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onload = function() {
+              if (xhr.status >= 200 && xhr.status < 300) {
+                console.log('filter res', xhr.responseText);
+                //var responseData = JSON.parse(xhr.responseText);
+                var responseData = xhr.responseText;
+                // remove loading indicator
+                document.body.style.cursor = "default";
+
+                // render ajax content into html for main filter and any other optional containers
+                //$(selector).html($(responseData).find(selector).html());
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(responseData, 'text/html');
+                var newContent = doc.querySelector(selector).innerHTML;
+                document.querySelector(selector).innerHTML = newContent;
+                
+                // replace event handlers
+                af.addEventHandlers();
+
+                // do callback if anything was passed
+                if (callback) {
+                    callback();
+                }
+              } else {
+                console.error('Request failed: ' + xhr.status);
+              }
+            };
+            xhr.onerror = function() {
+              console.error('Request failed');
+            };
+            xhr.send();
+        }
+        af.init = function () {
+            // add popstate event handler that should only be intialized once
+            window.onpopstate = function (event) {
+                af.ajaxFilter(window.location.pathname + window.location.search);
+            }
+            af.addEventHandlers();
+        }
+
+        af.init();
+    }
+
+function filterClickEvents() {
+    document.querySelector('#collection-dynamic-content').addEventListener('click', function(event) {
+        if (event.target.matches('.filters .section-header')) {
+            var header = event.target;
+            if (header.classList.contains('is-open')) {
+                header.classList.remove('is-open');
+                document.body.classList.remove('filterExp');
+            } else {
+                header.classList.add('is-open');
+                document.body.classList.add('filterExp');
+            }
+        }
+
+        if (event.target.matches('.filterEntry a')) {
+            event.preventDefault();
+            var link = event.target;
+            var sUrl = link.getAttribute('href');
+            var filterEntry = link.closest('div.filterEntry');
+            var filterIdTrigger = filterEntry.getAttribute('data-id');
+            var triggerElement = document.querySelector('#' + filterIdTrigger + ' a');
+            triggerElement.click();
+        }
+
+        if (event.target.matches('.clearAll a')) {
+            event.preventDefault();
+            document.querySelector('.collectionParent a').click();
+        }
+    });
+
+    document.querySelector('body').querySelector("#filter-wrapper").addEventListener("click", function(e) {
+        if (e.target.matches(".filter-block-title")) {
+            var title = e.target;
+            if (e.target.tagName != 'A') {
+                if (title.classList.contains('is-open')) {
+                    title.classList.remove('is-open');
+                    title.nextElementSibling.style.display = 'none';
+                } else {
+                    document.querySelectorAll("#filter-wrapper div.filter-block-title").forEach(function(el) {
+                        el.classList.remove('is-open');
+                    });
+                    document.querySelectorAll("#filter-wrapper div.filter-block-content").forEach(function(el) {
+                        el.style.display = 'none';
+                    });
+                    title.classList.add('is-open');
+                    title.nextElementSibling.style.display = 'block';
+                }
+            }
+        }
+    });
+
+    document.querySelector("#clearAll").addEventListener('click', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        document.querySelector('.collectionParent a').click();
+    });
+}
+
+function getSelected() {
+    document.querySelectorAll('.filter-option-block').forEach(function(block) {
+        var activeSize = block.querySelectorAll('.collection-sidebar__item--active').length;
+        var blockTitle = block.querySelector('.filter-block-title h3').getAttribute('data-title');
+        if (activeSize > 0) {
+            var selFilter = block.querySelector('.collection-sidebar__item--active a').textContent.replace(/_/g, '-');
+            block.classList.add('active');
+            // block.querySelector('h3 span').textContent = blockTitle + ' : ' + selFilter;
+        } else {
+            block.classList.remove('active');
+            block.querySelector('h3 span').textContent = blockTitle;
+        }
+    });
+
+    var fSel = document.querySelectorAll('body .collection-sidebar__item--active').length;
+    if (fSel > 0) {
+        var selectedFilter = document.querySelector('.selectedFilter');
+        selectedFilter.innerHTML = '';
+        document.body.classList.add('hasFilter');
+        document.querySelectorAll('.collection-sidebar__item--active').forEach(function(activeItem) {
+            var filterId = activeItem.getAttribute('id');
+            var activeHtml = activeItem.innerHTML;
+            var entryDiv = document.createElement('div');
+            entryDiv.setAttribute('data-id', filterId);
+            entryDiv.className = 'entry filterEntry';
+            entryDiv.innerHTML = activeHtml;
+            selectedFilter.appendChild(entryDiv);
+
+            var parentBlock = activeItem.closest('div.filter-option-block');
+            var titleElement = parentBlock.querySelector('div.filter-block-title h3');
+            var titleEntryDiv = document.createElement('div');
+            titleEntryDiv.className = 'entry filterEntry';
+            titleEntryDiv.innerHTML = activeHtml;
+            titleElement.appendChild(titleEntryDiv);
+        });
+
+        var clearAllDiv = document.createElement('div');
+        clearAllDiv.className = 'entry clearAll';
+        var clearAllLink = document.createElement('a');
+        clearAllLink.setAttribute('href', '#');
+        clearAllLink.textContent = 'Clear All';
+        clearAllDiv.appendChild(clearAllLink);
+        selectedFilter.appendChild(clearAllDiv);
+
+        document.querySelector("#clearAll").style.display = 'block';
+    } else {
+        document.body.classList.remove('hasFilter');
+    }
+}
+
+
+</script>
+{% schema %}
+  {
+    "name": "Custom Collection Filter",
+    "settings": [
+      
+    ],
+    "blocks": [
+        {
+            "type": "tags",
+            "name": "Tags filter",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Filter Title",
+                    "default": "Filter",
+                    "info": "eg. Product Type"
+                },
+                {
+                    "type": "text",
+                    "id": "prefix",
+                    "label": "Tag Prefix (needs to end with \"-\")",
+                    "info": "e.g Category-"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}

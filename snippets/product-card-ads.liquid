@@ -1,0 +1,38 @@
+<style>
+.item-package {
+  background-color: #c7e3e1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 0;
+  overflow: hidden;
+  height:100%;
+}
+.item-package img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.item-package a {
+  height: 100%;
+  display:block;
+}
+</style>
+{%- assign gridPos = section.settings.card_ad_banner_pos | plus: 0 -%} 
+{%- if count == gridPos -%}
+    {%- if section.settings.card_ad_banner_img != blank -%}
+      <li class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      {% if settings.animations_reveal_on_scroll %}
+        data-cascade
+        style="--animation-order: {{ forloop.index }};"
+      {% endif %}>
+        <div class="item item-package">
+          <a href="{{ section.settings.card_ad_banner_link }}" class="anchor-link">
+            <img src="{{ section.settings.card_ad_banner_img | image_url }}" alt="" loading="lazy">
+          </a>
+        </div>
+      </li>
+    {%- endif -%}
+{%- endif -%}
+{%- assign index = index | plus: 1 -%}

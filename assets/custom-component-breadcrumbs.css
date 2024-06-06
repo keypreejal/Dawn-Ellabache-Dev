@@ -1,0 +1,40 @@
+.breadcrumbs ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.breadcrumbs ol li {
+    list-style: none;
+    display: inline-block;
+}
+.breadcrumbs ol li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 0.2px;
+    display: block;
+    padding: 5px 15px;
+    line-height: 1.4;
+    font-weight: 500;
+    position: relative;
+}
+.breadcrumbs ol li a:after {
+    content: '/';
+    position: absolute;
+    right: -2.5px;
+    top: 1px;
+    color: #cacaca;
+    line-height: 1.4;
+    padding: 5px 0;
+}
+.breadcrumbs ol li:last-child a:after {
+    display: none;
+}
+@media only screen and (max-width: 767px){
+    .breadcrumbs ol li a {
+        font-size: 10px;
+        padding: 6px 13px;
+    }
+}

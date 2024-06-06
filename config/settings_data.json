@@ -9,10 +9,10 @@
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
-    "spacing_grid_horizontal": 8,
-    "spacing_grid_vertical": 8,
+    "spacing_grid_horizontal": 16,
+    "spacing_grid_vertical": 16,
     "animations_reveal_on_scroll": true,
-    "animations_hover_elements": "none",
+    "animations_hover_elements": "default",
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
     "buttons_radius": 0,
@@ -34,10 +34,10 @@
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
-    "card_style": "standard",
-    "card_image_padding": 0,
+    "card_style": "card",
+    "card_image_padding": 20,
     "card_text_alignment": "center",
-    "card_color_scheme": "background-2",
+    "card_color_scheme": "background-1",
     "card_border_thickness": 1,
     "card_border_opacity": 5,
     "card_corner_radius": 0,
@@ -45,10 +45,10 @@
     "card_shadow_horizontal_offset": 0,
     "card_shadow_vertical_offset": 4,
     "card_shadow_blur": 5,
-    "collection_card_style": "standard",
-    "collection_card_image_padding": 0,
-    "collection_card_text_alignment": "left",
-    "collection_card_color_scheme": "background-2",
+    "collection_card_style": "card",
+    "collection_card_image_padding": 20,
+    "collection_card_text_alignment": "center",
+    "collection_card_color_scheme": "background-1",
     "collection_card_border_thickness": 1,
     "collection_card_border_opacity": 5,
     "collection_card_corner_radius": 0,
@@ -74,8 +74,8 @@
     "text_boxes_shadow_horizontal_offset": 0,
     "text_boxes_shadow_vertical_offset": 4,
     "text_boxes_shadow_blur": 5,
-    "media_border_thickness": 1,
-    "media_border_opacity": 5,
+    "media_border_thickness": 0,
+    "media_border_opacity": 0,
     "media_radius": 0,
     "media_shadow_opacity": 0,
     "media_shadow_horizontal_offset": 0,
@@ -103,6 +103,7 @@
     "brand_image_width": 100,
     "social_facebook_link": "https:\/\/www.facebook.com\/ellabache",
     "social_instagram_link": "https:\/\/www.instagram.com\/ellabacheaus",
+    "social_linkedin_link": "https:\/\/www.linkedin.com\/company\/ellabache?originalSubdomain=au",
     "social_youtube_link": "",
     "social_tiktok_link": "",
     "social_twitter_link": "",
@@ -119,17 +120,8 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "background-1",
-    "salon_featured_image": "shopify:\/\/shop_images\/Therapist_720x_720x_4479ef79-5518-436e-9edb-6353756de330.jpg",
     "checkout_logo_image": "shopify:\/\/shop_images\/ellabache_572021e5-1f8d-45bd-890c-0afed81bee15.svg",
     "checkout_button_color": "#001b39",
-    "enable_minicart_upsell": true,
-    "upsell_item_limit": 3,
-    "shortcuts_consumer_key": "r7nfAlq0ILg4jhZMlRxv",
-    "shortcuts_consumer_secret": "YSgXTSpZl1bN1K9X5hnL",
-    "shortcuts_access_token_key": "qVSkMJsw67WKPFZeC06V",
-    "shortcuts_access_token_secret": "T73IfVgFBBMum2EcpQHJ",
-    "shortcuts_widget_base_uri": "d19ujuohqco9tx.cloudfront.net\/webwidgets\/7-49-1-9",
-    "shortcuts_api_version": "7.49.1.9",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -142,6 +134,12 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "eb-my-custom-fonts": {
+        "type": "eb-my-custom-fonts",
+        "settings": {
+          "enable": true
+        }
       }
     },
     "content_for_index": [
@@ -152,21 +150,21 @@
         "settings": {
           "background": "#ffffff",
           "background_gradient": "",
-          "text": "#121212",
-          "button": "#121212",
+          "text": "#001e37",
+          "button": "#001e37",
           "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
+          "secondary_button_label": "#001e37",
           "shadow": "#121212"
         }
       },
       "background-2": {
         "settings": {
-          "background": "#f3f3f3",
+          "background": "#f8f8f8",
           "background_gradient": "",
           "text": "#121212",
-          "button": "#121212",
-          "button_label": "#f3f3f3",
-          "secondary_button_label": "#121212",
+          "button": "#001e37",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#001e37",
           "shadow": "#121212"
         }
       },
@@ -194,11 +192,11 @@
       },
       "accent-2": {
         "settings": {
-          "background": "#334fb4",
+          "background": "#f9bfbf",
           "background_gradient": "",
-          "text": "#ffffff",
+          "text": "#001b39",
           "button": "#ffffff",
-          "button_label": "#334fb4",
+          "button_label": "#001f38",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }

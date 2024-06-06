@@ -353,9 +353,7 @@
         <small class="copyright__content"
           >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
         </small>
-        {%- comment -%}
         <small class="copyright__content">{{ powered_by_link }}</small>
-    {%- endcomment -%}
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
             {%- for policy in shop.policies -%}
@@ -486,7 +484,7 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
-      "default": "background-1"
+      "default": "scheme-1"
     },
     {
       "type": "header",

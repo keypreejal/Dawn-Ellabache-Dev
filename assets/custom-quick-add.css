@@ -1,0 +1,26 @@
+/* .product-grid .card__actions{
+  opacity: 0;
+  transform: translateY(2rem);
+} */
+.product-grid .quick-add{
+  margin:0;
+  width:calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+  transform: translateY(2rem);
+  opacity: 0;
+}
+.product-grid .quick-add:first-child .button{
+  background-color:#001e37;
+  color:#ffffff;
+}
+.product-grid .product-card-wrapper:hover .card__actions .quick-add{
+  animation: var(--animation-slide-in);
+}
+@media only screen and (max-width: 768px) {
+  .product-grid .quick-add{
+    opacity:1;
+    transform:none;
+  }
+  .quick-add__submit{
+    font-size:14px;
+  }
+}

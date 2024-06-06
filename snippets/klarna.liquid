@@ -1,0 +1,14 @@
+{%- case template -%}
+{%- when 'cart' -%}
+<script defer="defer" async src="https://oc-library.klarnaservices.com/lib.js" data-client-id="fc2121d8-40db-56c1-8737-9156e4559f59">
+</script>
+<klarna-placement data-key="credit-promotion-badge" data-locale="en-AU" data-purchase-amount="{{cart.total_price}}">
+  </klarna-placement>
+  {%- when 'product' -%}
+  <script async src="https://oc-library.klarnaservices.com/lib.js"
+    data-client-id="fc2121d8-40db-56c1-8737-9156e4559f59" defer="defer">
+    </script>
+  <klarna-placement data-key="credit-promotion-badge" data-locale="en-AU" data-purchase-amount="{{product.price}}">
+    </klarna-placement>
+    {%- else -%}
+    {%- endcase -%}

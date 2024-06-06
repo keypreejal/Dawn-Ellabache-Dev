@@ -1,1 +1,164 @@
-{"sections":{"banner":{"type":"main-collection-banner","settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"background-1"}},"product-grid":{"type":"main-collection-product-grid","settings":{"products_per_page":16,"columns_desktop":4,"color_scheme":"background-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_quick_add":true,"enable_filtering":true,"filter_type":"horizontal","enable_sorting":true,"columns_mobile":"2","padding_top":36,"padding_bottom":36}}},"order":["banner","product-grid"]}
+{
+  "sections": {
+    "custom-collection-filter": {
+      "type": "custom-collection-filter",
+      "blocks": {
+        "tags_xXqY3B": {
+          "type": "tags",
+          "settings": {
+            "title": "Collection",
+            "prefix": "Collection-"
+          }
+        },
+        "tags_RXiBBR": {
+          "type": "tags",
+          "settings": {
+            "title": "Category",
+            "prefix": "Category-"
+          }
+        },
+        "tags_qqAafU": {
+          "type": "tags",
+          "settings": {
+            "title": "Skin concerns",
+            "prefix": "Concern-"
+          }
+        },
+        "tags_gFREAT": {
+          "type": "tags",
+          "settings": {
+            "title": "Solution",
+            "prefix": "Solution-"
+          }
+        },
+        "tags_9JKtFk": {
+          "type": "tags",
+          "settings": {
+            "title": "Skin type",
+            "prefix": "Skin-"
+          }
+        }
+      },
+      "block_order": [
+        "tags_xXqY3B",
+        "tags_RXiBBR",
+        "tags_qqAafU",
+        "tags_gFREAT",
+        "tags_9JKtFk"
+      ],
+      "settings": {
+      }
+    },
+    "custom-banner": {
+      "type": "custom-main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "background-1"
+      }
+    },
+    "custom-product-grid": {
+      "type": "custom-main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 5,
+        "card_ad_banner_img": "{{ collection.metafields.custom.card_ad_banner_img.value }}",
+        "card_ad_banner_link": "{{ collection.metafields.custom.card_ad_banner_link.value }}",
+        "card_ad_banner_pos": "{{ collection.metafields.custom.card_ad_banner_position.value }}",
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "enable_quick_view": true,
+        "enable_wishlist": true,
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_collection_collapsible_content_VTPrJM": {
+      "type": "custom-collection-collapsible-content",
+      "settings": {
+        "collapsable_content": "<h2>Cleansers<\/h2><p>The first step towards healthy skin begins with a thorough cleanse. The correct cleanser can be your skin’s best ally, effectively purifying the skin by removing impurities, excess oil, and makeup residue, without compromising its natural moisture barrier.<\/p><p>The best cleansers go beyond the surface, gently coaxing out impurities that can lead to a dull complexion or breakouts. Selecting a cleanser tailored to your skin—whether it’s feeling dry, oily, combination, or sensitive—is crucial to ensure the product works synergistically with your skin’s unique characteristics.<\/p><h2>Different types of cleansers<\/h2><p>Various types of face cleansers cater to different skin needs.<\/p><h4>Cream cleansers<\/h4><p>Lush in texture, cream cleansers are ideal for dry or sensitised skin. Their gentle action retains natural skin oils, making them a perfect second-step for double cleansing.<\/p><h4>Foam cleansers<\/h4><p>Generating a rich lather that removes excess oil, foam cleansers are an ideal choice for combination skin types or to remove layers of makeup.<\/p><h4>Oil cleansers<\/h4><p>Oil cleansers work harmoniously with your skin’s oil, balancing the skin whilst removing pore-clogging debris. These are suitable for removing waterproof makeup without drying your skin.<\/p><h4>Milk cleansers<\/h4><p>Using a natural emulsion of fats and water, milk cleansers cleanse gently without disrupting the skin’s moisture balance.<\/p><h2>Best face cleansers<\/h2><p>Ella Baché offers an array of exceptional face cleansers tailored to your needs.<\/p><h4>Rinse-Off Cleansing Cream<\/h4><p>Our <a href=\"https:\/\/www.ellabache.com.au\/products\/rinse-off-cleansing-cream\">Rinse-Off Cleansing Cream<\/a> is a comforting solution that quickly sweeps away makeup and impurities without disrupting the skin’s natural moisture balance, leaving it supple and refreshed.<\/p><h4>Radiance Foaming Cleanser<\/h4><p>For normal to oily skin types, our <a href=\"https:\/\/www.ellabache.com.au\/products\/radiance-foaming-cleanser\">Radiance Foaming Cleanser<\/a> delivers an excellent balance, removing all makeup and surface residue without stripping the skin’s natural pH, resulting in a soft and radiant complexion.<\/p><h4>Botanical Cleansing Oil<\/h4><p>Our <a href=\"https:\/\/www.ellabache.com.au\/products\/botanical-cleansing-oil\">Botanical Cleansing Oil<\/a> is an essential for double cleansing. This oil-based cleanser dissolves makeup and grime while keeping the skin hydrated.<\/p><h2>Your skin, our expertise<\/h2><p>At Ella Baché, we understand the importance of cleansing and the role it plays in a robust skincare routine. Equipped with extensive expertise, we’re dedicated to helping you make informed choices for your skincare journey. Whether you’re after a refreshing face wash or a revitalising pore cleanser, we offer a selection of high-quality cleansers, tailored to your specific skin needs, setting you on the path to love the skin you’re in.<\/p>",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_multicolumn_dzdkfa": {
+      "type": "custom__multicolumn",
+      "blocks": {
+        "column_M8Hkge": {
+          "type": "column",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" class=\"icon icon-ella-display-gift\" viewbox=\"0 0 40 43\"><g fill=\"#001F38\"><path d=\"M34.204 17.706v23.608H4.816V17.706h29.388zm.408-1.686H4.408c-.669.017-1.207.573-1.224 1.264v24.451c.017.691.555 1.247 1.224 1.265h30.204c.67-.018 1.208-.574 1.225-1.265v-24.45c-.017-.692-.556-1.248-1.225-1.265z\"><\/path><path d=\"M37.551 9.275v6.745H1.633V9.275H37.55zm.816-1.687H.817A.83.83 0 0 0 0 8.431v8.432a.83.83 0 0 0 .816.843h37.551a.83.83 0 0 0 .817-.843V8.43a.807.807 0 0 0-.223-.612.754.754 0 0 0-.594-.23z\"><\/path><path d=\"M15.755 2.108c.459-.017.903.167 1.225.506.571.59 1.142 2.192 1.469 4.215-1.96-.337-3.51-.927-4.082-1.517a1.95 1.95 0 0 1-.49-1.35 1.707 1.707 0 0 1 .572-1.348 1.82 1.82 0 0 1 1.306-.506zm0-1.686a3.472 3.472 0 0 0-2.53 1.096c-1.368 1.377-1.405 3.635-.082 5.058 1.47 1.518 5.306 2.024 6.612 2.193h.082a.448.448 0 0 0 .408-.422c-.163-1.433-.653-5.312-2.123-6.83A2.9 2.9 0 0 0 15.755.423z\"><\/path><path d=\"M23.429 2.108c.5-.02.98.197 1.306.59.35.358.555.84.571 1.35a2.106 2.106 0 0 1-.49 1.348c-.571.59-2.122 1.18-4.081 1.518.326-2.024.898-3.626 1.47-4.216.29-.39.747-.61 1.224-.59zm0-1.686a3.54 3.54 0 0 0-2.45 1.011c-1.469 1.518-1.959 5.48-2.122 6.83a.404.404 0 0 0 .112.306c.078.08.186.123.296.115h.082c1.388-.168 5.143-.674 6.612-2.192a3.672 3.672 0 0 0 .69-3.904c-.553-1.326-1.823-2.18-3.22-2.166zM12.245 7.588h1.633v8.431h-1.633zm13.061 0h1.633v8.431h-1.633z\"><\/path><\/g><\/svg>",
+            "title": "",
+            "text": "<p>Shop now and pay later with <br>Afterpay or Klarna<\/p>",
+            "link": "shopify:\/\/collections\/all"
+          }
+        },
+        "column_kPxN73": {
+          "type": "column",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" class=\"icon icon-ella-display-shipping\" viewbox=\"0 0 40 34\"><path fill=\"#001F38\" d=\"M25 1.7v26.35H1.667V1.7H25zm.5-1.7H1.167a1.13 1.13 0 0 0-.833.34c-.22.226-.34.532-.334.85v27.37c-.007.318.114.624.334.85.22.224.521.347.833.34H25.5a1.13 1.13 0 0 0 .833-.34c.22-.226.34-.532.334-.85V1.19a1.177 1.177 0 0 0-.334-.85A1.13 1.13 0 0 0 25.5 0z\"><\/path><ellipse cx=\"9.583\" cy=\"30.175\" fill=\"#FFF\" rx=\"2.917\" ry=\"2.975\"><\/ellipse><path fill=\"#001F38\" d=\"M9.583 28.05c1.15 0 2.084.951 2.084 2.125S10.734 32.3 9.583 32.3c-1.15 0-2.083-.951-2.083-2.125a2.13 2.13 0 0 1 .605-1.508c.392-.4.924-.622 1.478-.617zm0-1.7c-2.07 0-3.75 1.713-3.75 3.825S7.513 34 9.583 34c2.071 0 3.75-1.713 3.75-3.825a3.847 3.847 0 0 0-1.093-2.71 3.696 3.696 0 0 0-2.657-1.115zm24.084-13.515h.083l4.583 5.695v9.52H26.667V12.835h7zm0-1.7H25V29.75h13.25c.456.023.902-.145 1.233-.467.33-.321.518-.767.517-1.233v-9.52a2.11 2.11 0 0 0-.333-1.02l-4.584-5.695a1.894 1.894 0 0 0-1.416-.68z\"><\/path><ellipse cx=\"32.917\" cy=\"30.175\" fill=\"#FFF\" rx=\"2.917\" ry=\"2.975\"><\/ellipse><path fill=\"#001F38\" d=\"M32.917 28.05c1.15 0 2.083.951 2.083 2.125s-.933 2.125-2.083 2.125c-1.15 0-2.084-.951-2.084-2.125a2.13 2.13 0 0 1 .606-1.508 2.04 2.04 0 0 1 1.478-.617zm0-1.7c-2.071 0-3.75 1.713-3.75 3.825S30.846 34 32.917 34c2.07 0 3.75-1.713 3.75-3.825a3.847 3.847 0 0 0-1.094-2.71 3.696 3.696 0 0 0-2.656-1.115z\"><\/path><\/svg>",
+            "title": "",
+            "text": "<p>Free shipping <br>on all orders of $100+<\/p>",
+            "link": "shopify:\/\/pages\/shipping"
+          }
+        },
+        "column_t3kFRr": {
+          "type": "column",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" class=\"icon icon-ella-display-cosmetics\" viewbox=\"0 0 43 41\"><path d=\"M21.25 1.667v1.666h-3.5V1.667h3.5zM22.735.002h-6.472a.243.243 0 0 0-.195.064.219.219 0 0 0-.067.185V4.75a.219.219 0 0 0 .067.185.243.243 0 0 0 .195.064h6.472a.243.243 0 0 0 .195-.064.219.219 0 0 0 .067-.185V.25a.219.219 0 0 0-.067-.185.243.243 0 0 0-.195-.064z\"><\/path><path d=\"M27 11h-1.75c0-3.431-2.354-6.222-5.25-6.222S14.75 7.568 14.75 11H13c0-4.444 3.141-8 7-8s7 3.556 7 8z\"><\/path><path d=\"M25.248 11.825v27.352H14.75V11.825h10.498zm.875-1.823H13.875c-.483 0-.875.408-.875.912v29.174c0 .504.392.912.875.912h12.248c.484 0 .875-.408.875-.912V10.914a.878.878 0 0 0-.239-.663.804.804 0 0 0-.636-.25zM9.307 33.783v5.434H1.693v-5.434h7.614zm1.27-1.781H.423a.387.387 0 0 0-.308.122.431.431 0 0 0-.115.323v8.195c.026.22.214.377.423.356h10.152a.387.387 0 0 0 .308-.122.431.431 0 0 0 .115-.323v-8.195a.394.394 0 0 0-.423-.356z\"><\/path><path d=\"M9.308 29.875v2.156H1.692v-2.156h7.616zM10.662 28H.338c-.181.014-.326.174-.338.375v5.25c.012.201.157.361.338.375h10.324c.181-.014.326-.174.338-.375v-5.25c-.012-.201-.157-.361-.338-.375zm28.646 8.714v2.572h-7.616v-2.572h7.616zM40.662 35H30.338a.366.366 0 0 0-.338.343v5.314c.012.184.157.33.338.343h10.324a.366.366 0 0 0 .338-.343v-5.314a.366.366 0 0 0-.338-.343z\"><\/path><path d=\"M41.147 6.829L39.471 35.17h-8.03L29.765 6.83h11.382zM42.206 5H28.794c-.438 0-.794.368-.794.823l1.765 30.354c0 .455.355.823.794.823h9.882c.439 0 .794-.368.794-.823L43 5.823c0-.455-.356-.823-.794-.823z\"><\/path><\/svg>",
+            "title": "",
+            "text": "<p>2 complimentary samples <br>with all orders<\/p>",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "column_M8Hkge",
+        "column_kPxN73",
+        "column_t3kFRr"
+      ],
+      "custom_css": [
+        ".multicolumn-list__item {border-right: solid 1px #979797;}",
+        ".multicolumn-list__item:last-child {border-right: none;}",
+        "@media screen and (max-width: 768px) {.multicolumn-list__item {border-right: none; } .multicolumn-list__item {border-bottom: solid 1px #979797; }}"
+      ],
+      "settings": {
+        "page_width": 1200,
+        "title": "",
+        "heading_size": "h1",
+        "icon_width": 40,
+        "image_width": "seventh",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "overlay_title_button": "disabled",
+        "overlay_color": "#c4e4e3",
+        "overlay_opacity": 80,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "custom-collection-filter",
+    "custom-banner",
+    "custom-product-grid",
+    "custom_collection_collapsible_content_VTPrJM",
+    "custom_multicolumn_dzdkfa"
+  ]
+}

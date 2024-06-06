@@ -1,1 +1,416 @@
-{"sections":{"slideshow_GKVnFa":{"type":"slideshow","blocks":{"slide_Jz8T8r":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/0424_GWP_Web_Banner_4096x1620px_1900x.progressive_79c20272-2265-4b0f-b00d-49df72ccc1a8.webp","heading":"","heading_size":"h1","subheading":"","button_label":"","link":"","button_style_secondary":false,"box_align":"middle-center","show_text_box":false,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"","text_alignment_mobile":"center"}},"slide_CNtadC":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/0324_INNOVATION_Web_Banner_4096x1620px_1900x.progressive_36426a28-6e3d-42b8-ac08-d5bdbc5e72a6.webp","heading":"","heading_size":"h1","subheading":"","button_label":"","link":"","button_style_secondary":false,"box_align":"middle-center","show_text_box":false,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"","text_alignment_mobile":"center"}},"slide_HtBdEY":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/0224_CAMPAIGN_Web_Banner_4096x1620px_1900x.progressive_5f12876a-8141-4fe6-9d30-42d1f3e17f60.webp","heading":"","heading_size":"h1","subheading":"","button_label":"","link":"","button_style_secondary":false,"box_align":"middle-center","show_text_box":false,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"background-1","text_alignment_mobile":"center"}}},"block_order":["slide_Jz8T8r","slide_CNtadC","slide_HtBdEY"],"settings":{"layout":"full_bleed","slide_height":"adapt_image","slider_visual":"dots","auto_rotate":true,"change_slides_speed":5,"image_behavior":"none","show_text_below":false,"accessibility_info":""}},"multicolumn_NcHqi9":{"type":"multicolumn","blocks":{"column_7LVXRH":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/gift_41bd8bd9-4855-4698-9cba-c587d5080f06.svg","title":"","text":"<p>Shop now and pay later with Afterpay or Klarna<\/p>","link_label":"","link":""}},"column_jfd8PQ":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/truck.svg","title":"","text":"<p>Free shipping on all orders of $100+<\/p>","link_label":"","link":""}},"column_fexgQ8":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/cosmetic.svg","title":"","text":"<p>2 complimentary samples with all orders<\/p>","link_label":"","link":""}}},"block_order":["column_7LVXRH","column_jfd8PQ","column_fexgQ8"],"settings":{"title":"","heading_size":"h1","image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"center","background_style":"none","button_label":"","button_link":"","color_scheme":"","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"featured_collection":{"type":"featured-collection","settings":{"title":"THE SKINCARE EDIT","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"treatment-products","products_to_show":8,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"background-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":true,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":true,"padding_top":44,"padding_bottom":36}},"rich_text_MaPWPw":{"type":"rich-text","blocks":{"heading_8FNMir":{"type":"heading","settings":{"heading":"Enjoy two complimentary samples on all online orders.","heading_size":"h2"}},"button_cY9DRk":{"type":"button","settings":{"button_label":"Shop Now","button_link":"shopify:\/\/collections","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_8FNMir","button_cY9DRk"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"","full_width":true,"padding_top":40,"padding_bottom":52}}},"order":["slideshow_GKVnFa","multicolumn_NcHqi9","featured_collection","rich_text_MaPWPw"]}
+{
+  "sections": {
+    "custom_slideshow_zmb9yH": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "slide_tkDNGn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/0624_CLEARANCE_Web_Banner_4096x1620px_1900x.progressive_08ef596d-210f-4326-aa6f-53808e40f7ea.webp",
+            "image_mobile": "shopify:\/\/shop_images\/0624_CLEARANCE_Mobile_800x800px_800x.progressive_72929d81-7fa4-4012-8664-6b98a9680070.webp",
+            "image_link": "https:\/\/www.ellabache.com.au\/collections\/20-off-cleanser-sale\/"
+          }
+        },
+        "slide_8m6wg9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/0524_MOTHERSDAY_GWP_Web_Banner_4096x1620px_01_1900x.progressive_13d25994-7749-496d-b4a5-08853e5e519c.webp",
+            "image_mobile": "shopify:\/\/shop_images\/0524_MOTHERSDAY_GWP_Mobile_800x800px_800x.progressive_4321607d-9f6f-4a1b-a5e7-7bda87de10e9.webp",
+            "image_link": "https:\/\/www.ellabache.com.au\/collections\/in-my-own-skin"
+          }
+        },
+        "slide_GHVTtP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/0524_INNOVATION_Web_Banner_4096x1620px_1900x.progressive_e4548324-86da-424b-9483-dee9f5099898.webp",
+            "image_mobile": "shopify:\/\/shop_images\/0524_INNOVATION_Mobile_800x800px_800x.progressive_67b8470a-4d23-4cf7-b17c-93df46f370b2.webp",
+            "image_link": "shopify:\/\/products\/hydra-hyaluronic-cellular-serum"
+          }
+        },
+        "slide_bPhgeb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/0224_CAMPAIGN_Web_Banner_4096x1620px_1900x.progressive_5f12876a-8141-4fe6-9d30-42d1f3e17f60.webp",
+            "image_mobile": "shopify:\/\/shop_images\/0224_CAMPAIGN_Mobile_800x800px.webp",
+            "image_link": "https:\/\/www.ellabache.com.au\/blogs\/ella-bache\/unveiling-in-my-own-skin-ella-baches-empowering-2024-campaign"
+          }
+        }
+      },
+      "block_order": [
+        "slide_tkDNGn",
+        "slide_8m6wg9",
+        "slide_GHVTtP",
+        "slide_bPhgeb"
+      ],
+      "settings": {
+        "auto_rotate": true,
+        "change_slides_speed": 7
+      }
+    },
+    "custom_multicolumn_aqYyUa": {
+      "type": "custom__multicolumn",
+      "blocks": {
+        "column_tBAiFa": {
+          "type": "column",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" class=\"icon icon-ella-display-gift\" viewbox=\"0 0 40 43\"><g fill=\"#001F38\"><path d=\"M34.204 17.706v23.608H4.816V17.706h29.388zm.408-1.686H4.408c-.669.017-1.207.573-1.224 1.264v24.451c.017.691.555 1.247 1.224 1.265h30.204c.67-.018 1.208-.574 1.225-1.265v-24.45c-.017-.692-.556-1.248-1.225-1.265z\"><\/path><path d=\"M37.551 9.275v6.745H1.633V9.275H37.55zm.816-1.687H.817A.83.83 0 0 0 0 8.431v8.432a.83.83 0 0 0 .816.843h37.551a.83.83 0 0 0 .817-.843V8.43a.807.807 0 0 0-.223-.612.754.754 0 0 0-.594-.23z\"><\/path><path d=\"M15.755 2.108c.459-.017.903.167 1.225.506.571.59 1.142 2.192 1.469 4.215-1.96-.337-3.51-.927-4.082-1.517a1.95 1.95 0 0 1-.49-1.35 1.707 1.707 0 0 1 .572-1.348 1.82 1.82 0 0 1 1.306-.506zm0-1.686a3.472 3.472 0 0 0-2.53 1.096c-1.368 1.377-1.405 3.635-.082 5.058 1.47 1.518 5.306 2.024 6.612 2.193h.082a.448.448 0 0 0 .408-.422c-.163-1.433-.653-5.312-2.123-6.83A2.9 2.9 0 0 0 15.755.423z\"><\/path><path d=\"M23.429 2.108c.5-.02.98.197 1.306.59.35.358.555.84.571 1.35a2.106 2.106 0 0 1-.49 1.348c-.571.59-2.122 1.18-4.081 1.518.326-2.024.898-3.626 1.47-4.216.29-.39.747-.61 1.224-.59zm0-1.686a3.54 3.54 0 0 0-2.45 1.011c-1.469 1.518-1.959 5.48-2.122 6.83a.404.404 0 0 0 .112.306c.078.08.186.123.296.115h.082c1.388-.168 5.143-.674 6.612-2.192a3.672 3.672 0 0 0 .69-3.904c-.553-1.326-1.823-2.18-3.22-2.166zM12.245 7.588h1.633v8.431h-1.633zm13.061 0h1.633v8.431h-1.633z\"><\/path><\/g><\/svg>",
+            "image": "shopify:\/\/shop_images\/gift_41bd8bd9-4855-4698-9cba-c587d5080f06.svg",
+            "title": "",
+            "text": "<p>Shop now and pay later with <br>Afterpay or Klarna<\/p>",
+            "link": "shopify:\/\/collections\/all"
+          }
+        },
+        "column_PBNgdm": {
+          "type": "column",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" class=\"icon icon-ella-display-shipping\" viewbox=\"0 0 40 34\"><path fill=\"#001F38\" d=\"M25 1.7v26.35H1.667V1.7H25zm.5-1.7H1.167a1.13 1.13 0 0 0-.833.34c-.22.226-.34.532-.334.85v27.37c-.007.318.114.624.334.85.22.224.521.347.833.34H25.5a1.13 1.13 0 0 0 .833-.34c.22-.226.34-.532.334-.85V1.19a1.177 1.177 0 0 0-.334-.85A1.13 1.13 0 0 0 25.5 0z\"><\/path><ellipse cx=\"9.583\" cy=\"30.175\" fill=\"#FFF\" rx=\"2.917\" ry=\"2.975\"><\/ellipse><path fill=\"#001F38\" d=\"M9.583 28.05c1.15 0 2.084.951 2.084 2.125S10.734 32.3 9.583 32.3c-1.15 0-2.083-.951-2.083-2.125a2.13 2.13 0 0 1 .605-1.508c.392-.4.924-.622 1.478-.617zm0-1.7c-2.07 0-3.75 1.713-3.75 3.825S7.513 34 9.583 34c2.071 0 3.75-1.713 3.75-3.825a3.847 3.847 0 0 0-1.093-2.71 3.696 3.696 0 0 0-2.657-1.115zm24.084-13.515h.083l4.583 5.695v9.52H26.667V12.835h7zm0-1.7H25V29.75h13.25c.456.023.902-.145 1.233-.467.33-.321.518-.767.517-1.233v-9.52a2.11 2.11 0 0 0-.333-1.02l-4.584-5.695a1.894 1.894 0 0 0-1.416-.68z\"><\/path><ellipse cx=\"32.917\" cy=\"30.175\" fill=\"#FFF\" rx=\"2.917\" ry=\"2.975\"><\/ellipse><path fill=\"#001F38\" d=\"M32.917 28.05c1.15 0 2.083.951 2.083 2.125s-.933 2.125-2.083 2.125c-1.15 0-2.084-.951-2.084-2.125a2.13 2.13 0 0 1 .606-1.508 2.04 2.04 0 0 1 1.478-.617zm0-1.7c-2.071 0-3.75 1.713-3.75 3.825S30.846 34 32.917 34c2.07 0 3.75-1.713 3.75-3.825a3.847 3.847 0 0 0-1.094-2.71 3.696 3.696 0 0 0-2.656-1.115z\"><\/path><\/svg>",
+            "image": "shopify:\/\/shop_images\/truck.svg",
+            "title": "",
+            "text": "<p>Free shipping <br>on all orders of $100+<\/p>",
+            "link": "shopify:\/\/pages\/shipping"
+          }
+        },
+        "column_VURVVE": {
+          "type": "column",
+          "settings": {
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" class=\"icon icon-ella-display-cosmetics\" viewbox=\"0 0 43 41\"><path d=\"M21.25 1.667v1.666h-3.5V1.667h3.5zM22.735.002h-6.472a.243.243 0 0 0-.195.064.219.219 0 0 0-.067.185V4.75a.219.219 0 0 0 .067.185.243.243 0 0 0 .195.064h6.472a.243.243 0 0 0 .195-.064.219.219 0 0 0 .067-.185V.25a.219.219 0 0 0-.067-.185.243.243 0 0 0-.195-.064z\"><\/path><path d=\"M27 11h-1.75c0-3.431-2.354-6.222-5.25-6.222S14.75 7.568 14.75 11H13c0-4.444 3.141-8 7-8s7 3.556 7 8z\"><\/path><path d=\"M25.248 11.825v27.352H14.75V11.825h10.498zm.875-1.823H13.875c-.483 0-.875.408-.875.912v29.174c0 .504.392.912.875.912h12.248c.484 0 .875-.408.875-.912V10.914a.878.878 0 0 0-.239-.663.804.804 0 0 0-.636-.25zM9.307 33.783v5.434H1.693v-5.434h7.614zm1.27-1.781H.423a.387.387 0 0 0-.308.122.431.431 0 0 0-.115.323v8.195c.026.22.214.377.423.356h10.152a.387.387 0 0 0 .308-.122.431.431 0 0 0 .115-.323v-8.195a.394.394 0 0 0-.423-.356z\"><\/path><path d=\"M9.308 29.875v2.156H1.692v-2.156h7.616zM10.662 28H.338c-.181.014-.326.174-.338.375v5.25c.012.201.157.361.338.375h10.324c.181-.014.326-.174.338-.375v-5.25c-.012-.201-.157-.361-.338-.375zm28.646 8.714v2.572h-7.616v-2.572h7.616zM40.662 35H30.338a.366.366 0 0 0-.338.343v5.314c.012.184.157.33.338.343h10.324a.366.366 0 0 0 .338-.343v-5.314a.366.366 0 0 0-.338-.343z\"><\/path><path d=\"M41.147 6.829L39.471 35.17h-8.03L29.765 6.83h11.382zM42.206 5H28.794c-.438 0-.794.368-.794.823l1.765 30.354c0 .455.355.823.794.823h9.882c.439 0 .794-.368.794-.823L43 5.823c0-.455-.356-.823-.794-.823z\"><\/path><\/svg>",
+            "image": "shopify:\/\/shop_images\/cosmetic.svg",
+            "title": "",
+            "text": "<p>2 complimentary samples <br>with all orders<\/p>",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "column_tBAiFa",
+        "column_PBNgdm",
+        "column_VURVVE"
+      ],
+      "custom_css": [
+        ".multicolumn-list__item {border-right: solid 1px #979797;}",
+        ".multicolumn-list__item:last-child {border-right: none;}",
+        "@media (max-width: 768px) {.multicolumn {display: none; }}"
+      ],
+      "settings": {
+        "page_width": 1200,
+        "title": "",
+        "heading_size": "h1",
+        "icon_width": 40,
+        "image_width": "seventh",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "overlay_title_button": "disabled",
+        "overlay_color": "#c4e4e3",
+        "overlay_opacity": 80,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 24
+      }
+    },
+    "custom_multicolumn_bgFw9h": {
+      "type": "custom__multicolumn",
+      "blocks": {
+        "column_QG9UJ8": {
+          "type": "column",
+          "settings": {
+            "icon": "",
+            "image": "shopify:\/\/shop_images\/EllaBache-0922-1_DAY_NIGHT_600x.progressive_1729b8cb-3045-4865-a814-d1196516b07a.webp",
+            "title": "Hydra",
+            "text": "",
+            "link": "shopify:\/\/collections\/hydra"
+          }
+        },
+        "column_E9MzW9": {
+          "type": "column",
+          "settings": {
+            "icon": "",
+            "image": "shopify:\/\/shop_images\/Digital_Asset_1_600x.progressive_45c1ba16-e91e-4a6e-b5d7-44ac2a1945b8.webp",
+            "title": "Cleansers",
+            "text": "",
+            "link": "shopify:\/\/collections\/cleansers"
+          }
+        },
+        "column_eEWE7k": {
+          "type": "column",
+          "settings": {
+            "icon": "",
+            "image": "shopify:\/\/shop_images\/Serum_Range_1000x1000_600x.progressive_bc091164-60f5-48fb-955c-fdb25a5c23bf.webp",
+            "title": "Serums",
+            "text": "",
+            "link": "shopify:\/\/collections\/serums"
+          }
+        }
+      },
+      "block_order": [
+        "column_QG9UJ8",
+        "column_E9MzW9",
+        "column_eEWE7k"
+      ],
+      "custom_css": [
+        ".title-wrapper-with-link {justify-content: center;}",
+        "h2.title {font-size: 18px;}"
+      ],
+      "settings": {
+        "page_width": 1800,
+        "title": "",
+        "heading_size": "h2",
+        "icon_width": 40,
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "overlay_title_button": "enabled",
+        "overlay_color": "#c4e4e3",
+        "overlay_opacity": 80,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_featured_collection_tAAFXr": {
+      "type": "custom-featured-collection",
+      "blocks": {
+        "product_collection_EHJ6E9": {
+          "type": "product_collection",
+          "settings": {
+            "title": "Cleansers",
+            "collection": "cleansers",
+            "products_to_show": 25,
+            "columns_desktop": 5
+          }
+        },
+        "product_collection_6EjjWM": {
+          "type": "product_collection",
+          "settings": {
+            "title": "Hydra",
+            "collection": "hydra",
+            "products_to_show": 25,
+            "columns_desktop": 5
+          }
+        },
+        "product_collection_Ygdd9W": {
+          "type": "product_collection",
+          "settings": {
+            "title": "Classics",
+            "collection": "classics",
+            "products_to_show": 25,
+            "columns_desktop": 5
+          }
+        }
+      },
+      "block_order": [
+        "product_collection_EHJ6E9",
+        "product_collection_6EjjWM",
+        "product_collection_Ygdd9W"
+      ],
+      "custom_css": [
+        ".collection__title {text-align: center;}",
+        "h2.title {font-size: 18px;}"
+      ],
+      "settings": {
+        "title": "THE SKINCARE EDIT",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "text_with_button_kN9bNh": {
+      "type": "text-with-button",
+      "blocks": {
+        "heading_hFMrcg": {
+          "type": "heading",
+          "settings": {
+            "heading": "WELCOME <br>TO BOLD BLOG",
+            "heading_size": "h0"
+          }
+        },
+        "button_bgJ3fW": {
+          "type": "button",
+          "settings": {
+            "button_label": "LESSON IN MY OWN SKIN",
+            "button_link": "#",
+            "button_style_secondary": false
+          }
+        },
+        "button_hhVnnb": {
+          "type": "button",
+          "settings": {
+            "button_label": "STUDY WITH US",
+            "button_link": "#",
+            "button_style_secondary": false
+          }
+        },
+        "button_XdFTtK": {
+          "type": "button",
+          "settings": {
+            "button_label": "BOLD BEYOND BEAUTY",
+            "button_link": "#",
+            "button_style_secondary": false
+          }
+        },
+        "button_F4yBKT": {
+          "type": "button",
+          "settings": {
+            "button_label": "OWN A SALON",
+            "button_link": "#",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_hFMrcg",
+        "button_bgJ3fW",
+        "button_hhVnnb",
+        "button_XdFTtK",
+        "button_F4yBKT"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "section_color_scheme": "accent-2",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_featured_blog_6FJLiz": {
+      "type": "custom-featured-blog",
+      "blocks": {
+        "column_LYegM3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/12.04.24_1.progressive.webp",
+            "tag": "Blog",
+            "title": "Celebrating Her Radiance: Luisa Dunn",
+            "text": "<p>In a recent interview, Luisa Dunn shared her journey to embracing her skin story and finding confidence in her natural beauty. By embracing her natural hair, she shifted her perception of aging and skincare, viewing her skin with compassion and letting go of the need to alter it. Luisa now sees her skin as a reflection of her life experiences, no longer viewing it as flawed. Being bold, to her, means finding confidence from within, independent of external validation.<\/p>",
+            "link": "shopify:\/\/products\/eternal-reconstructing-very-rich-cream"
+          }
+        },
+        "column_7NnTpw": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SHOT_6_1526_500x.progressive_e6ec2c23-544c-4031-a4c5-1063dcccf8dd.webp",
+            "tag": "Blog",
+            "title": "Radiant Treatment Packages",
+            "text": "<p>This Mother's Day, we're delighted to present our exclusive range of indulgent packages and luxurious Skin Solutions, carefully curated to surprise and delight. Whether you're seeking the perfect gift or planning a special day of pampering together, Ella Baché has everything you need to make this Mother's Day truly unforgettable. <\/p>",
+            "link": "shopify:\/\/blogs\/ingredients\/zinc-gluconate"
+          }
+        }
+      },
+      "block_order": [
+        "column_LYegM3",
+        "column_7NnTpw"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "landscape",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "instagram_feed_FMVVPh": {
+      "type": "instagram-feed",
+      "settings": {
+        "title": "Follow us on Instagram",
+        "link": "https:\/\/www.instagram.com\/ellabacheaus\/?hl=en",
+        "caption": "@ellabacheaus",
+        "user_id": "17841400417663213",
+        "feed_token": "{{ localization.market.metafields.instagram.access_token.value }}",
+        "section_color_scheme": "background-2",
+        "color_scheme": "background-2",
+        "padding_top": 36,
+        "padding_bottom": 40
+      }
+    },
+    "custom_rich_text_7jFgnA": {
+      "type": "custom-rich-text",
+      "blocks": {
+        "heading_pP43Ha": {
+          "type": "heading",
+          "settings": {
+            "heading": "Enjoy two complimentary samples on all online orders.",
+            "heading_size": "h2"
+          }
+        },
+        "image_MJKUVz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ezgif.com-avif-to-jpg-converter.jpg"
+          }
+        },
+        "button_egHLAD": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pP43Ha",
+        "image_MJKUVz",
+        "button_egHLAD"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "custom_slideshow_zmb9yH",
+    "custom_multicolumn_aqYyUa",
+    "custom_multicolumn_bgFw9h",
+    "custom_featured_collection_tAAFXr",
+    "text_with_button_kN9bNh",
+    "custom_featured_blog_6FJLiz",
+    "instagram_feed_FMVVPh",
+    "custom_rich_text_7jFgnA"
+  ]
+}

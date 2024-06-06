@@ -1,0 +1,39 @@
+<style>
+ul.product-grid-images {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+ul.product-grid-images li {
+  width: calc(50% - 5px);
+}
+ul.product-grid-images li img {
+  display: block;
+  width: 100%;
+  height: 375px;
+  object-fit: cover;
+}
+@media (max-width: 1500px) {
+    ul.product-grid-images li img {
+        height: calc(100vw* 0.25);
+    }
+}
+@media (max-width: 768px) {
+    ul.product-grid-images li img {
+        height: calc(100vw* 0.48828);
+    }
+}
+</style>
+<ul class="product-grid-images {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  {{ section.settings.thumb_img_grid }}
+  <!-- <li>
+    <img width="328" height="375" src="https://cdn.accentuate.io/2089769304113/1683021470448/Ella_Bache_Botanical_Cleansing_Oil__200mL_Lifestyle-_3.png?v=1683021470448&amp;transform=resize=350" loading="lazy" alt="">
+  </li>
+  <li>
+    <img width="328" height="375" src="https://cdn.accentuate.io/2089769304113/1683021473788/Ella_Bache_Botanical_Cleansing_Oil__200mL_Lifestyle-_4.png?v=1683021473788&amp;transform=resize=350" loading="lazy" alt="">
+  </li> -->
+</ul>

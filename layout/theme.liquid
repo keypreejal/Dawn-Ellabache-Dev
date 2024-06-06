@@ -28,8 +28,6 @@
 
     {% render 'meta-tags' %}
 
-    <script src="{{ 'jquery-3.7.0.min.js' | asset_url }}"></script>
-    <script src="{{ 'jquery.magnific-popup.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
@@ -254,6 +252,7 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'base-custom.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -294,13 +293,15 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
+  {%- comment -%}{% sections 'header-group' %}{%- endcomment -%}
+  {% sections 'custom-header-group' %}
 
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
-    </main>
+  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
 
-    {% sections 'footer-group' %}
+  {%- comment -%}{% sections 'footer-group' %}{%- endcomment -%}
+  {% sections 'custom-footer-group' %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

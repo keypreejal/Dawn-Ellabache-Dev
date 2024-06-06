@@ -1,0 +1,175 @@
+{{ 'section-instagram-feed.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+  
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+<div id="instaFeed" class="section section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}" data-section-type="home-instagram"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+<script>
+  window.addEventListener('load', (event) => {
+    homeInstagramFeed = function() {
+      var instaFeed = $('.js-home-insta');
+      instaFeed.each(function(i) {
+        var thisToken = $(instaFeed[i]).attr('data-insta-token');
+        var thisUserId = $(instaFeed[i]).attr('data-insta-userid');
+        var thisFeedCount = $(instaFeed[i]).attr('data-insta-count');
+        var reqCount = parseInt(thisFeedCount) + 5; // + 5 to prevent bugs
+        function successFunc(data) {
+          constructFeed(data, this.indexValue);
+          function constructFeed(data, feedCount) {
+            var thisFeed = $('.js-home-insta')[feedCount];
+            var thisList = $(thisFeed).find('.js-home-insta-list');
+            var feed = data.data;
+            var userName = data.data[0].username;
+
+// console.log("Insta Res Data"); console.log(data);
+// set URL to user account
+// $(thisFeed).parent('.js-home-insta-link').attr('href', 'https://www.instagram.com/'+ userName);
+// empty list element so when editing inside sections images don't get doubled
+            $(thisList).empty();
+
+// create images in list element
+            for (var i = 0; i < thisFeedCount; i++) {
+
+// console.log('Insta Feed');
+// console.log(feed[i]);
+              var type = feed[i].media_type;
+              var image = feed[i].media_url;
+              if (type == "VIDEO") {
+                image = feed[i].thumbnail_url;
+              }
+              var link = feed[i].permalink;
+              $(thisList).append('<div class="item"><a rel="noopener" href="' + link + '" target="_blank"><div class="overlay"><svg width="24pc" height="23.998pc" version="1.1" viewBox="0 0 360 359.97"><g transform="translate(-77.129 -99.751)"><path d="m257.13 129.76c-40.734 0-45.84 0.25899-61.837 0.91733-15.964 0.7292-26.846 3.2273-36.386 6.9367-9.8635 3.8317-18.262 8.9831-26.6 17.322-8.3384 8.3386-13.442 16.691-17.274 26.554-3.7088 9.5405-6.2548 20.467-6.983 36.431-0.73154 15.997-0.91968 21.104-0.91968 61.837 0 40.736 0.18808 45.84 0.91968 61.837 0.72919 15.964 3.2742 26.846 6.983 36.386 3.8324 9.8628 8.9358 18.215 17.274 26.554 8.3381 8.3386 16.737 13.485 26.6 17.319 9.5396 3.7071 20.421 6.2546 36.386 6.9837 15.997 0.7292 21.104 0.87029 61.837 0.87029s45.84-0.23496 61.837-0.87029c15.964-0.72919 26.892-3.2767 36.431-6.9837 9.8635-3.834 18.216-8.9807 26.554-17.319 8.3384-8.3385 13.441-16.691 17.274-26.554 3.7088-9.5406 6.255-20.422 6.9833-36.386 0.73154-15.997 0.91968-21.102 0.91968-61.837 0-40.733-0.18808-45.84-0.91968-61.837-0.7292-15.964-3.2745-26.89-6.9833-36.431-3.8324-9.8628-8.9355-18.216-17.274-26.554-8.3381-8.3386-16.691-13.49-26.554-17.322-9.5396-3.7094-20.467-6.2075-36.431-6.9367-15.997-0.72919-21.104-0.91733-61.837-0.91733zm0 27.013c40.048 0 44.781 0.23495 60.597 0.87028 14.623 0.65865 22.601 3.1378 27.887 5.1914 7.0012 2.7215 11.98 5.9628 17.228 11.211 5.2489 5.2478 8.4898 10.227 11.21 17.228 2.0535 5.2854 4.524 13.264 5.1916 27.885 0.71982 15.816 0.87269 20.551 0.87269 60.598 0 40.049-0.16464 44.784-0.87269 60.598-0.66802 14.624-3.138 22.555-5.1916 27.841-2.7199 7.0001-5.9607 12.022-11.21 17.272-5.248 5.2478-10.227 8.4891-17.228 11.211-5.2852 2.0464-13.264 4.481-27.887 5.1467-15.814 0.72913-20.546 0.87028-60.597 0.87028-40.051 0-44.783-0.23495-60.597-0.87028-14.623-0.65865-22.556-3.0932-27.841-5.1467-7.0011-2.7215-12.026-5.9628-17.274-11.211-5.2477-5.2501-8.4886-10.272-11.21-17.272-2.0535-5.2854-4.4779-13.217-5.1455-27.841-0.71982-15.814-0.87269-20.549-0.87269-60.598 0-40.046 0.16465-44.781 0.87269-60.598 0.66803-14.621 3.0919-22.6 5.1455-27.885 2.721-7.0001 5.9619-11.98 11.21-17.228 5.248-5.2478 10.273-8.4891 17.274-11.211 5.2852-2.0464 13.218-4.5233 27.841-5.1914 15.816-0.72913 20.549-0.87028 60.597-0.87028zm80.076 24.9c-9.9395 0-18.009 8.0681-18.009 18.008 0 9.9404 8.0697 18.009 18.009 18.009 9.9407 0 18.009-8.0681 18.009-18.009 0-9.9404-8.0683-18.008-18.009-18.008zm-80.076 21.041c-42.536 0-76.998 34.509-76.998 77.044 0 42.537 34.462 76.997 76.998 76.997s77.044-34.46 77.044-76.997c0-42.535-34.508-77.044-77.044-77.044zm0 27.06c27.612 0 49.984 22.374 49.984 49.984 0 27.613-22.373 49.984-49.984 49.984s-49.984-22.372-49.984-49.984c0-27.61 22.373-49.984 49.984-49.984z"/></g></svg></div><img width="252" height="252" loading="lazy" alt="Instagram" src="' + image + '"></a></div></div>');
+            }
+            $('div.js-home-insta-list .item').each(function(i) {
+              if (i == 0) {
+                $(this).addClass('hero-item');
+              } else {
+                $(this).addClass('grid-item');
+              }
+            });
+            $('div.js-home-insta-list .grid-item').wrapAll("<div class='small-grids'></div>");
+          }
+        }
+
+// check token is entered
+        if (thisToken !== '') { // get feed via ajax
+          $.ajax({
+            // https://graph.instagram.com/17841400417663213/media
+            url: 'https://graph.instagram.com/' + thisUserId + '/media/?fields=id,media_type,media_url,thumbnail_url,username,timestamp,caption,permalink&count=' + reqCount + '&access_token=' + thisToken,
+            dataType: 'jsonp',
+            crossDomain: true,
+            indexValue: i,
+            success: successFunc
+          });
+        }
+      });
+    };
+    //console.log('{{ section.settings.title }}');
+    var sectionSettingsTitle = '{{ section.settings.title }}';
+    var sectionSettingsFeedToken = '{{ section.settings.feed_token }}';
+    var sectionHtml = '';
+    sectionHtml += '<div class="home-insta home-insta-- {{ section.id }} home-insta-- {{ section.settings.posts_limit }} js-home-insta page-width" data-insta-userid=" {{ section.settings.user_id }}" data-insta-token="{{ section.settings.feed_token }}" data-insta-count="5">';
+    if (sectionSettingsTitle.trim().length > 0) {
+      sectionHtml += '<h2 class="title"><a href=" {{ section.settings.link }} "> {{ section.settings.title | escape }}</a></h2>';
+      sectionHtml += '<h3 class="sub-title"> {{ section.settings.caption }} </h3>';
+    }
+    if (sectionSettingsFeedToken.trim().length > 0) {
+      sectionHtml += '<div class="home-insta__items js-home-insta-list"></div>';
+    }
+    sectionHtml += '</div>';
+    $('.section[data-section-type="home-instagram"]').html(sectionHtml);
+    const iObserver = new IntersectionObserver(items => {
+      if (items[0].isIntersecting) {
+        homeInstagramFeed();
+      }
+    });
+    iObserver.observe(document.getElementById('instaFeed'));
+  });
+</script>
+{% schema %}
+{
+  "name": "t:sections.instagram-feed.name",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Shop Instagram"
+    },
+    {
+        "type": "text",
+        "id": "link",
+        "label": "Heading redirect on click",
+        "default": "https://www.instagram.com/ellabacheaus/?hl=en"
+    },
+    {
+        "type": "text",
+        "id": "caption",
+        "label": "Caption",
+        "default": "@ellabache No two skins are a like"
+    },
+    {
+        "type": "text",
+        "id": "user_id",
+        "label": "User ID",
+        "default": "17841400417663213"
+    }, 
+    {
+        "type": "text",
+        "id": "feed_token",
+        "label": "Instagram Access Token"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.multirow.settings.container_color_scheme.label",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.instagram-feed.presets.name"
+    }
+  ]
+}
+{% endschema %}

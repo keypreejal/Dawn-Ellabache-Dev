@@ -1,0 +1,144 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'custom-header-mega-menu' %}
+{% endcomment %}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+    {%- assign child_list_handle = link.title | handleize -%}
+    {%- assign title_parts = link.title | split: '|' -%}
+    {%- assign target_attr = title_parts[1] | strip %}
+      <li>
+        {%- if link.links != blank -%}
+           
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="parent header__menu-item list-menu__item link focus-inset"
+              >
+                <span
+                  {%- if link.child_active %}
+                    class="header__active-menu-item"
+                  {% endif %}
+                >
+                    {% if link.title contains '_blank' %}
+                        {{ title_parts[0] }}
+                    {% else %}
+                    {{- link.title | escape -}}
+                    {% endif %}
+                </span>
+                {% render 'icon-caret' %}
+              </summary>
+              <div
+                id="MegaMenu-Content-{{ forloop.index }}"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                tabindex="-1"
+              >
+                <ul
+                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                  role="list"
+                >
+                  {%- for childlink in link.links -%}
+                    <li class="scroll-trigger animate--slide-in">
+                      <a
+                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                        href="{{ childlink.url }}"
+                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                        {% if childlink.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{ childlink.title | escape }}
+                      </a>
+                      {%- if childlink.links != blank -%}
+                        <ul class="list-unstyled" role="list">
+                          {%- for grandchildlink in childlink.links -%}
+                            {%- assign str = grandchildlink.title -%}
+                            {%- assign a = str | split: '||' -%}
+                            <li>
+                              <a
+                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                href="{{ grandchildlink.url }}"
+                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                {% if grandchildlink.current %}
+                                  aria-current="page"
+                                {% endif %} {% if a[1] !=blank %}
+                                style="border-bottom:2px solid {{ a[1] }};" {% endif %}
+                              >
+                              {{ a[0] }}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                  {%- if child_list_handle == "products" -%}
+                  <li class="best-sellers scroll-trigger animate--slide-in">      
+                    <div class="item">
+                        <div class="inner">
+                            <a href="https://www.ellabache.com.au/collections/hydra"><img src="//www.ellabache.com.au/cdn/shop/files/blue-hydra_400x.jpg?v=1714408391" loading="lazy" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="inner">
+                            <a href="https://www.ellabache.com.au/collections/serums"><img src="//www.ellabache.com.au/cdn/shop/files/Serum_Range_600x600_82e10f52-b51d-4a9d-8586-2ea1dc260d76_400x.jpg?v=1714408438" loading="lazy" alt="">
+                            </a>
+                        </div>
+                    </div>
+                  </li>
+                  {%- endif -%}
+                  {%- if child_list_handle == "treatments" -%}
+                    <li class="best-treatments scroll-trigger animate--slide-in">
+                        <a href="#" class="mega-menu__link mega-menu__link--level-2 link"
+                        href="{{ childlink.url }}"
+                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}">Most Popular Treatments</a>
+                        <div class="flex-container">
+                            {%- for product in collections.treatments.products limit:4 -%}
+                            <div class="item">
+                                <div class="inner">
+                                    <a class="flex-container" href="{{ product.url }}">
+                                        <figure class="product-image">
+                                            <img src="{{ product.featured_image.src | img_url: '100x' }}" loading="lazy" alt="{{ block.settings.desktop_image.alt | escape }}">
+                                        </figure>
+                                        <div class="product-content">
+                                            <h3>{{ product.title }}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            {%- endfor -%}
+                        </div>
+                    </li>
+                    {%- endif -%}
+                </ul>
+              </div>
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span
+              {%- if link.current %}
+                class="header__active-menu-item"
+              {% endif %}
+            >
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

@@ -15,4 +15,4 @@ jobs:
         password: ${{ secrets.SHOP_PASSWORD_DEV }}
         lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         collection_handle: cleansers
-        product_handle: botanical-skin-treatment-oil
+        product_handle: botanical-cleansing-oil

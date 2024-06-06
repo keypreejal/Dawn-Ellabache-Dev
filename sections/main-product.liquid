@@ -9,6 +9,7 @@
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-section-main-product.css' | asset_url | stylesheet_tag }}
   {%- if product.quantity_price_breaks_configured? -%}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
@@ -532,6 +533,10 @@
               {% render 'icon-with-text',
                 block: block
               %}
+            {%- when 'afterpay' -%}
+              {%- render 'afterpay-block', block: block -%}
+            {%- when 'klarna' -%}
+              {%- render 'klarna-block', block: block -%}
           {%- endcase -%}
         {%- endfor -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -1997,6 +2002,60 @@
           "default": "Heading",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.label",
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
+        }
+      ]
+    },
+    {
+      "type": "afterpay",
+      "name": "Afterpay",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "afterpay_enabled",
+          "label": "Enable afterpay",
+          "info": "Display afterpay payment details in product page?",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "installment_text",
+          "label": "Installment Text",
+          "default": "or make |#NO_OF_INSTALLMENT#| payments of |#AFTERPAYVALUE#| with"
+        },
+        {
+          "type": "number",
+          "id": "no_of_installment",
+          "label": "Number of Installment",
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "terms_logo",
+          "label": "Terms Logo"
+        }
+      ]
+    },
+    {
+      "type": "klarna",
+      "name": "Klarna",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "klarna_enabled",
+          "label": "Enable klarna",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
         }
       ]
     }

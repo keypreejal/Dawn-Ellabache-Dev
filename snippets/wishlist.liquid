@@ -1,0 +1,16 @@
+<a href="javascript:void(0)"
+  class="wishlist-icon add_to_wishlist"
+  id="addToWishlist"
+  data-w-variant-quantity="{{ card_product.variants[0].inventory_quantity }}"
+  data-w-variant-sku="{{ card_product.variants[0].sku }}"
+  data-w-variant-title="{{ card_product.variants[0].title }}"
+  data-w-product-handle="{{ card_product.handle }}"
+  data-w-product-title="{{ card_product.title }}"
+  data-w-quantity="1"
+  data-w-product-image="{{ card_product.featured_image.src | image_url: 'grande' }}"
+  data-w-product-price="{{ card_product.variants[0].price | money | remove: '.00' }}"
+  data-w-variant-id="{{ card_product.variants[0].id }}"
+  data-w-product-id="{{ card_product.id }}"
+>
+  {%- render'custom-icon-heart' -%}
+</a>

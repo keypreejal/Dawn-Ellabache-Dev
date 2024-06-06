@@ -1,0 +1,96 @@
+<style>
+.product-video-block {
+  width: 100%;
+  position: relative;
+  margin-top:50px;
+}
+.product-video-block video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.product-video-block .poster {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.product-video-block .poster img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+  .product-video-block .play-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    cursor: pointer;
+    background-color: #002039;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+    text-align: center;
+    opacity: 0.9;
+    visibility: visible;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    margin-top: -50px;
+    margin-left: -50px;
+}
+  .product-video-block .play-button span {
+    color: #ffffff;
+    display: inline;
+    line-height: 100px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+.product-video-block .play-button:hover {
+  opacity: 1;
+}
+.product-video-block.playing .poster, .product-video-block.playing .play-button {
+    opacity: 0;
+}
+@media (max-width: 768px) {
+  .product-video-block .play-button {
+      transform: scale(0.8);
+  }
+}
+</style>
+<div class="product-video-block {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <video id="promoVideo" controls="">
+    <source src="{{ section.settings.promo_video | image_url }}" type="video/mp4">
+  </video>
+  <div class="poster" onclick="playPause()">
+    <img src="{{ section.settings.promo_video_poster | image_url }}" alt="Promo Video Poster" loading="lazy">
+  </div>
+  <div id="playPromoVideo"  onclick="playPause()" class="play-button"><span>Play</span></div>
+  <script>
+    var myVideo = document.getElementById("promoVideo"); 
+    var videoBlock = document.querySelector('.product-video-block');
+
+    function playPause() { 
+      if (myVideo.paused) {
+        myVideo.play();
+        videoBlock.classList.add('playing');
+      } else {
+        myVideo.pause();
+        videoBlock.classList.remove('playing');
+      }
+    }
+    myVideo.addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+        videoBlock.classList.remove('playing');
+    }
+  </script>
+</div>

@@ -1,0 +1,14 @@
+{% if product.available == true %}
+  {%- if block.settings.afterpay_enabled -%}
+    {%- if product.metafields.accentuate.hide_afterpay == blank -%}
+        <div class="item afterpay">
+          {{ block.settings.afterpay_logo }}
+          <div class="tooltips">
+            <div class="inner">
+              {%- render 'afterpay', block: block -%}
+            </div>
+          </div>
+        </div>
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
